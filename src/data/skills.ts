@@ -3,7 +3,6 @@ export interface SkillGroup {
   items: string[];
 }
 
-/** Skills as listed on the August 2026 CV. */
 export const skills: SkillGroup[] = [
   {
     name: "Backend",
@@ -24,7 +23,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Data & messaging",
-    items: ["SQL", "PL/SQL", "Oracle DB", "Redis", "Kafka"],
+    items: ["SQL", "PL/SQL", "Oracle DB", "Redis", "Kafka", "ETL", "SSIS"],
   },
   {
     name: "Security",
@@ -35,15 +34,27 @@ export const skills: SkillGroup[] = [
     items: ["Docker", "Kubernetes", "GitLab", "Jenkins", "Azure"],
   },
   {
-    name: "Low-code",
-    items: ["Mendix"],
+    name: "Data engineering",
+    items: [
+      "Python",
+      "pandas",
+      "PostgreSQL",
+      "Docker Compose",
+      "Terraform",
+      "GCP",
+      "BigQuery",
+      "dbt",
+      "DuckDB",
+      "Kestra",
+      "Spark",
+    ],
   },
   {
     name: "Data science",
-    items: ["Python", "scikit-learn", "PyTorch", "Power BI", "ML / DL"],
+    items: ["scikit-learn", "PyTorch", "Power BI", "ML / DL"],
   },
   {
-    name: "AI tools",
-    items: ["Claude", "Cursor", "Codex"],
+    name: "Low-code",
+    items: ["Mendix"],
   },
 ];

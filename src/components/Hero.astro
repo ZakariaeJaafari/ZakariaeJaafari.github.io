@@ -13,11 +13,15 @@ const { locale, t } = Astro.props;
 const cv = cvByLocale[locale];
 ---
 
-<section class="hero-panel border-b border-line" aria-labelledby="hero-name">
+<section
+  id="top"
+  class="hero-panel border-b border-line"
+  aria-labelledby="hero-name"
+>
   <div
     class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.4fr_0.8fr] lg:gap-16 lg:py-24"
   >
-    <div class="reveal">
+    <div>
       <p class="font-mono text-xs tracking-[0.18em] text-accent uppercase">
         {t.hero.kickerLocation}
         <span aria-hidden="true"> · </span>
@@ -68,7 +72,7 @@ const cv = cvByLocale[locale];
         </a>
       </div>
     </div>
-    <div class="reveal reveal-delay justify-self-center lg:justify-self-end">
+    <div class="justify-self-center lg:justify-self-end">
       <Image
         src={photo}
         alt={t.hero.photoAlt}

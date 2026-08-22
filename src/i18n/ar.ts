@@ -198,8 +198,6 @@ export const ar: Dictionary = {
   },
   skills: {
     heading: "المهارات",
-    intro:
-      "مأخوذة من السيرة. Kafka وRedis وKubernetes وKeycloak جزء من العمل المستقل الحالي لدى ADD Agency، وتظهر أيضًا في ChantiePro.",
     groups: [
       {
         name: "الخلفية",
@@ -228,11 +226,29 @@ export const ar: Dictionary = {
         items: ["Docker", "Kubernetes", "GitLab", "Jenkins", "Azure"],
       },
       {
-        name: "هندسة البيانات وعلم البيانات",
-        items: ["Python", "pandas", "scikit-learn", "PyTorch", "Power BI", "ML / DL"],
+        name: "هندسة البيانات",
+        items: [
+          "Python",
+          "pandas",
+          "SQL",
+          "PostgreSQL",
+          "Docker",
+          "Docker Compose",
+          "Terraform",
+          "GCP",
+          "BigQuery",
+          "dbt",
+          "DuckDB",
+          "Kestra",
+          "Spark",
+          "Kafka",
+        ],
+      },
+      {
+        name: "علم البيانات",
+        items: ["scikit-learn", "PyTorch", "Power BI", "ML / DL"],
       },
       { name: "التطوير السريع", items: ["Mendix"] },
-      { name: "أدوات الذكاء الاصطناعي", items: ["Claude", "Cursor", "Codex"] },
     ],
   },
   education: {

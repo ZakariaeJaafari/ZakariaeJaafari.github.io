@@ -199,8 +199,6 @@ export const fr: Dictionary = {
   },
   skills: {
     heading: "Compétences",
-    intro:
-      "Issues du CV. Kafka, Redis, Kubernetes et Keycloak font partie de la mission freelance actuelle chez ADD Agency, et apparaissent aussi dans ChantiePro.",
     groups: [
       {
         name: "Backend",
@@ -229,11 +227,29 @@ export const fr: Dictionary = {
         items: ["Docker", "Kubernetes", "GitLab", "Jenkins", "Azure"],
       },
       {
-        name: "Data engineering & science",
-        items: ["Python", "pandas", "scikit-learn", "PyTorch", "Power BI", "ML / DL"],
+        name: "Data engineering",
+        items: [
+          "Python",
+          "pandas",
+          "SQL",
+          "PostgreSQL",
+          "Docker",
+          "Docker Compose",
+          "Terraform",
+          "GCP",
+          "BigQuery",
+          "dbt",
+          "DuckDB",
+          "Kestra",
+          "Spark",
+          "Kafka",
+        ],
+      },
+      {
+        name: "Data science",
+        items: ["scikit-learn", "PyTorch", "Power BI", "ML / DL"],
       },
       { name: "Low-code", items: ["Mendix"] },
-      { name: "Outils IA", items: ["Claude", "Cursor", "Codex"] },
     ],
   },
   education: {

@@ -30,8 +30,9 @@ const links = [
     class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8"
   >
     <a
-      href={home}
+      href={`${home}#top`}
       class="font-serif text-lg tracking-tight text-ink no-underline"
+      data-home-link
     >
       {site.name}
     </a>
@@ -97,6 +98,20 @@ const links = [
   document.querySelectorAll("header details a").forEach((link) => {
     link.addEventListener("click", () => {
       link.closest("details")?.removeAttribute("open");
+    });
+  });
+
+  document.querySelectorAll("[data-home-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = link.getAttribute("href");
+      const onHome =
+        location.pathname === target?.replace(/#.*$/, "") ||
+        location.pathname === target?.replace(/#.*$/, "") + "/";
+      if (onHome) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        history.replaceState(null, "", target ?? "#top");
+      }
     });
   });
 </script>

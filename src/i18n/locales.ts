@@ -15,12 +15,12 @@ export const localeMeta: Record<
 };
 
 export const cvByLocale: Record<Locale, { href: string; fileLabel: string }> = {
-  en: { href: "/cv/CV_Zakariae_Jaafari_EN.pdf", fileLabel: "EN" },
-  fr: { href: "/cv/CV_Zakariae_Jaafari_FR.pdf", fileLabel: "FR" },
-  ar: { href: "/cv/CV_Zakariae_Jaafari_EN.pdf", fileLabel: "EN" },
+  en: { href: "/cv/Zakariae_Jaafari_CV_EN.pdf", fileLabel: "EN" },
+  fr: { href: "/cv/Zakariae_Jaafari_CV_FR.pdf", fileLabel: "FR" },
+  ar: { href: "/cv/Zakariae_Jaafari_CV_EN.pdf", fileLabel: "EN" },
 };
 
 export const cvFiles = [
-  { href: "/cv/CV_Zakariae_Jaafari_EN.pdf", labelEn: "English", labelFr: "Anglais", labelAr: "الإنجليزية", code: "EN" },
-  { href: "/cv/CV_Zakariae_Jaafari_FR.pdf", labelEn: "French", labelFr: "Français", labelAr: "الفرنسية", code: "FR" },
+  { href: "/cv/Zakariae_Jaafari_CV_EN.pdf", labelEn: "English", labelFr: "Anglais", labelAr: "الإنجليزية", code: "EN" },
+  { href: "/cv/Zakariae_Jaafari_CV_FR.pdf", labelEn: "French", labelFr: "Français", labelAr: "الفرنسية", code: "FR" },
 ] as const;

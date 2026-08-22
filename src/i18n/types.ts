@@ -80,7 +80,7 @@ export interface Dictionary {
   projectPages: Record<string, ProjectCopy>;
   skills: {
     heading: string;
-    intro: string;
+    intro?: string;
     groups: { name: string; items: string[] }[];
   };
   education: {

@@ -10,7 +10,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/jaafarizakariae/",
   github: "https://github.com/ZakariaeJaafari",
   url: "https://zakariaejaafari.github.io",
-  cvHref: "/cv/CV_Zakariae_Jaafari.pdf",
+  cvHref: "/cv/Zakariae_Jaafari_CV_EN.pdf",
   cvLabel: "Download CV",
   description:
     "Full-Stack Software Engineer in Rabat. Java, Spring Boot, Angular and React — microservices, and the front ends that sit on them. Open to roles worldwide.",
