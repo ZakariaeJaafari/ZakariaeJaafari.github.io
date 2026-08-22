@@ -1,0 +1,32 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="border-t border-line">
+  <div
+    class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8"
+  >
+    <p>
+      <span class="text-ink">{site.name}</span>
+      <span aria-hidden="true"> · </span>
+      {site.location}
+    </p>
+    <p>
+      <a href={site.github} class="text-muted no-underline hover:text-ink"
+        >GitHub</a
+      >
+      <span aria-hidden="true"> · </span>
+      <a href={site.linkedin} class="text-muted no-underline hover:text-ink"
+        >LinkedIn</a
+      >
+      <span aria-hidden="true"> · </span>
+      <a
+        href={`mailto:${site.email}`}
+        class="text-muted no-underline hover:text-ink">{site.email}</a
+      >
+    </p>
+    <p class="text-xs">
+      Static site, Astro. Deployed from GitHub Actions to GitHub Pages.
+    </p>
+  </div>
+</footer>

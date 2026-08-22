@@ -1,0 +1,63 @@
+---
+const services = [
+  { name: "auth", port: "8081", role: "Registration, login, roles" },
+  { name: "user", port: "8082", role: "Profiles and organisations" },
+  { name: "referentiel", port: "8083", role: "Categories, units" },
+  { name: "project", port: "8084", role: "Projects, milestones" },
+  { name: "material", port: "8085", role: "Stock and movements" },
+  { name: "equipment", port: "8086", role: "Register and assignments" },
+  { name: "hr", port: "8087", role: "Employees, attendance" },
+  { name: "expense", port: "8088", role: "Capture and approval" },
+  { name: "finance", port: "8089", role: "Invoices, budgets" },
+  { name: "notification", port: "8090", role: "In-app and email" },
+  { name: "document", port: "8091", role: "PDF, Excel, Word" },
+  { name: "file", port: "8092", role: "MinIO uploads" },
+  { name: "audit", port: "8093", role: "Trail and history" },
+];
+---
+
+<figure class="border border-line bg-paper p-5 sm:p-6">
+  <figcaption class="font-mono text-xs tracking-wide text-muted uppercase">
+    Request path and backing services
+  </figcaption>
+  <ol
+    class="mt-4 grid gap-2 font-mono text-xs sm:grid-cols-3"
+    aria-label="ChantiePro request path"
+  >
+    <li class="border border-line bg-surface px-3 py-3">
+      <p class="text-accent">01</p>
+      <p class="mt-1 text-ink">Angular 18 · Nx</p>
+      <p class="mt-1 text-muted">NgRx Signal Store</p>
+    </li>
+    <li class="border border-line bg-surface px-3 py-3">
+      <p class="text-accent">02</p>
+      <p class="mt-1 text-ink">API Gateway :8080</p>
+      <p class="mt-1 text-muted">JWT, routing, CORS</p>
+    </li>
+    <li class="border border-line bg-surface px-3 py-3">
+      <p class="text-accent">03</p>
+      <p class="mt-1 text-ink">Eureka + Config</p>
+      <p class="mt-1 text-muted">:8761 · :8888</p>
+    </li>
+  </ol>
+  <h3 class="mt-6 font-mono text-xs tracking-wide text-muted uppercase">
+    Business services
+  </h3>
+  <ul class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map((svc) => (
+        <li class="border border-line bg-surface px-3 py-2.5">
+          <p class="font-mono text-sm text-ink">
+            {svc.name}
+            <span class="text-muted"> :{svc.port}</span>
+          </p>
+          <p class="text-xs text-muted">{svc.role}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="mt-5 font-mono text-xs text-muted">
+    Kafka domain events → notification, audit, finance · PostgreSQL 16
+    (schema per service) · Redis · MinIO · Prometheus / Grafana / Loki / Zipkin
+  </p>
+</figure>

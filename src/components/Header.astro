@@ -1,0 +1,89 @@
+---
+import { site } from "../data/site";
+
+const onHome = Astro.url.pathname === "/" || Astro.url.pathname === "/index.html";
+const prefix = onHome ? "" : "/";
+
+const links = [
+  { href: `${prefix}#about`, label: "About" },
+  { href: `${prefix}#experience`, label: "Experience" },
+  { href: `${prefix}#projects`, label: "Projects" },
+  { href: `${prefix}#skills`, label: "Skills" },
+  { href: `${prefix}#education`, label: "Education" },
+  { href: `${prefix}#contact`, label: "Contact" },
+];
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-line/80 bg-paper/90 backdrop-blur-sm"
+>
+  <div
+    class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8"
+  >
+    <a
+      href={onHome ? "#main" : "/"}
+      class="font-serif text-lg tracking-tight text-ink no-underline"
+    >
+      {site.name}
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="text-[0.92rem] text-muted no-underline transition-colors hover:text-ink"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={site.cvHref}
+        class="inline-flex items-center border border-ink px-3 py-1.5 text-[0.85rem] font-medium text-ink no-underline hover:bg-ink hover:text-paper"
+        download
+      >
+        {site.cvLabel}
+      </a>
+    </nav>
+
+    <details class="relative lg:hidden">
+      <summary
+        class="cursor-pointer list-none border border-line px-3 py-1.5 text-sm text-ink [&::-webkit-details-marker]:hidden"
+      >
+        Menu
+      </summary>
+      <div
+        class="absolute right-0 mt-2 w-56 border border-line bg-surface p-3 shadow-none"
+      >
+        <nav class="flex flex-col gap-1" aria-label="Mobile">
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                class="px-2 py-1.5 text-sm text-ink no-underline hover:bg-paper"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+          <a
+            href={site.cvHref}
+            class="mt-2 border border-ink px-2 py-1.5 text-center text-sm font-medium text-ink no-underline"
+            download
+          >
+            {site.cvLabel}
+          </a>
+        </nav>
+      </div>
+    </details>
+  </div>
+</header>
+
+<script>
+  document.querySelectorAll("header details a").forEach((link) => {
+    link.addEventListener("click", () => {
+      link.closest("details")?.removeAttribute("open");
+    });
+  });
+</script>

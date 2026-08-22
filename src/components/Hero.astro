@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import { site } from "../data/site";
+import photo from "../assets/zakariae-jaafari.jpg";
+---
+
+<section class="border-b border-line" aria-labelledby="hero-name">
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.4fr_0.8fr] lg:gap-16 lg:py-24"
+  >
+    <div>
+      <p class="font-mono text-xs tracking-[0.18em] text-accent uppercase">
+        {site.location}
+        <span aria-hidden="true"> · </span>
+        {site.availability}
+      </p>
+      <h1
+        id="hero-name"
+        class="mt-4 font-serif text-5xl leading-[1.05] tracking-tight text-ink sm:text-6xl"
+      >
+        {site.name}
+      </h1>
+      <p class="mt-4 text-xl text-accent sm:text-2xl">
+        {site.title}
+      </p>
+      <p class="mt-2 font-mono text-sm text-muted">
+        {site.headline}
+      </p>
+      <p class="mt-6 max-w-xl text-[1.05rem] text-muted">
+        I build Java and Spring Boot backends, the Angular and React interfaces
+        that sit on them, and enterprise applications on Mendix. Based in Rabat;
+        available for Software Engineer and Full-Stack Engineer roles worldwide.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#projects"
+          class="inline-flex items-center bg-accent px-4 py-2.5 text-sm font-medium text-paper no-underline hover:bg-accent-hover"
+        >
+          View projects
+        </a>
+        <a
+          href={site.cvHref}
+          class="inline-flex items-center border border-ink px-4 py-2.5 text-sm font-medium text-ink no-underline hover:bg-ink hover:text-paper"
+          download
+        >
+          {site.cvLabel}
+        </a>
+        <a
+          href={site.linkedin}
+          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline hover:text-ink"
+          rel="me noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href={site.github}
+          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline hover:text-ink"
+          rel="me noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="justify-self-center lg:justify-self-end">
+      <Image
+        src={photo}
+        alt="Portrait of Zakariae Jaafari in a white shirt, against a light background."
+        width={360}
+        height={360}
+        densities={[1, 2]}
+        quality={82}
+        class="h-56 w-56 rounded-full object-cover ring-1 ring-line sm:h-72 sm:w-72"
+      />
+    </div>
+  </div>
+</section>

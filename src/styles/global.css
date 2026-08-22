@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "@fontsource-variable/source-serif-4";
+@import "@fontsource-variable/ibm-plex-sans";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+@theme {
+  --font-sans: "IBM Plex Sans Variable", "IBM Plex Sans", ui-sans-serif, system-ui,
+    sans-serif;
+  --font-serif: "Source Serif 4 Variable", "Source Serif 4", ui-serif, Georgia,
+    "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", monospace;
+
+  --color-paper: #f3f0e8;
+  --color-ink: #16181b;
+  --color-muted: #4a535c;
+  --color-accent: #1c4e80;
+  --color-accent-hover: #143a60;
+  --color-line: #d2ccc0;
+  --color-surface: #fffcf6;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "kern";
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+  color: var(--color-ink);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.prose-page a {
+  color: var(--color-accent);
+  text-underline-offset: 3px;
+}
+
+.prose-page a:hover {
+  color: var(--color-accent-hover);
+}

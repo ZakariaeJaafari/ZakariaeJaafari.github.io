@@ -1,0 +1,81 @@
+---
+import { site } from "../data/site";
+---
+
+<section
+  id="contact"
+  class="border-b border-line"
+  aria-labelledby="contact-heading"
+>
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <h2 id="contact-heading" class="font-serif text-3xl tracking-tight text-ink">
+      Contact
+    </h2>
+    <p class="mt-3 max-w-xl text-muted">
+      I am based in Rabat and open to Software Engineer and Full-Stack Engineer
+      roles worldwide.
+    </p>
+    <address class="mt-8 not-italic">
+      <ul class="space-y-3 text-[1.05rem]">
+        <li>
+          <span class="font-mono text-xs tracking-wide text-muted uppercase"
+            >Email</span
+          >
+          <div>
+            <a
+              href={`mailto:${site.email}`}
+              class="text-accent no-underline hover:underline">{site.email}</a
+            >
+          </div>
+        </li>
+        <li>
+          <span class="font-mono text-xs tracking-wide text-muted uppercase"
+            >Phone</span
+          >
+          <div>
+            <a
+              href={site.phoneHref}
+              class="text-accent no-underline hover:underline">{site.phone}</a
+            >
+          </div>
+        </li>
+        <li>
+          <span class="font-mono text-xs tracking-wide text-muted uppercase"
+            >LinkedIn</span
+          >
+          <div>
+            <a
+              href={site.linkedin}
+              class="text-accent no-underline hover:underline"
+              rel="me noopener noreferrer">linkedin.com/in/jaafarizakariae</a
+            >
+          </div>
+        </li>
+        <li>
+          <span class="font-mono text-xs tracking-wide text-muted uppercase"
+            >GitHub</span
+          >
+          <div>
+            <a
+              href={site.github}
+              class="text-accent no-underline hover:underline"
+              rel="me noopener noreferrer">github.com/ZakariaeJaafari</a
+            >
+          </div>
+        </li>
+      </ul>
+    </address>
+    <p class="mt-8">
+      <a
+        href={site.cvHref}
+        class="inline-flex items-center border border-ink px-4 py-2.5 text-sm font-medium text-ink no-underline hover:bg-ink hover:text-paper"
+        download
+      >
+        {site.cvLabel}
+      </a>
+    </p>
+    <p class="mt-3 text-sm text-muted">
+      The PDF is the French version of the CV.
+    </p>
+  </div>
+</section>
