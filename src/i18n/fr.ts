@@ -2,9 +2,9 @@ import type { Dictionary } from "./types";
 
 export const fr: Dictionary = {
   meta: {
-    title: "Zakariae Jaafari — Ingénieur logiciel Full-Stack",
+    title: "Zakariae Jaafari — Ingénieur logiciel · Data Engineering & IA",
     description:
-      "Ingénieur logiciel Full-Stack à Rabat. Java, Spring Boot, Angular et React — microservices, pipelines de données, et les interfaces qui les accompagnent. Ouvert aux postes Software, Full-Stack, Data Engineer et Data Science, partout.",
+      "Ingénieur logiciel à Rabat. Java, Spring Boot, Kafka et Python — le logiciel d'abord, avec une orientation data engineering et IA appliquée. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone.",
   },
   nav: {
     about: "À propos",
@@ -23,10 +23,10 @@ export const fr: Dictionary = {
   hero: {
     kickerLocation: "Rabat, Maroc",
     kickerAvailability: "Ouvert aux opportunités partout",
-    title: "Ingénieur logiciel Full-Stack",
-    headline: "Java · Spring Boot · Angular · React",
+    title: "Ingénieur logiciel · Data Engineering & IA",
+    headline: "Java · Spring Boot · Kafka · Python",
     summary:
-      "Ingénieur full-stack, plus de 4 ans sur Java 21 et Spring Boot côté secteur public et ESN : interfaces Angular et React, microservices événementiels, IAM Keycloak. Basé à Rabat. Intervient en français, anglais et arabe. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone, et aux rôles Data Engineer lorsque le socle Java/Kafka se transfère.",
+      "Ingénieur logiciel, plus de 4 ans sur Java 21 et Spring Boot côté secteur public et ESN : microservices événementiels, Angular et React, IAM Keycloak. Orientation data engineering et IA appliquée. Basé à Rabat. Intervient en français, anglais et arabe. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone.",
     viewProjects: "Voir les projets",
     photoAlt:
       "Portrait de Zakariae Jaafari, chemise blanche, fond clair.",
@@ -34,9 +34,9 @@ export const fr: Dictionary = {
   about: {
     heading: "À propos",
     paragraphs: [
-      "Je suis ingénieur logiciel Full-Stack à Rabat. Depuis septembre 2024, je suis ingénieur freelance auprès de l'Agence de Développement du Digital (ADD), l'opérateur national marocain du numérique : services Java 21 et Spring Boot, interfaces Angular et React, Redis et Kafka entre les services, Docker et Kubernetes pour la livraison, Keycloak pour l'identité. Mendix fait partie des outils lorsque le besoin s'y prête — ce n'est pas le centre du travail.",
+      "Je suis ingénieur logiciel à Rabat. Depuis septembre 2024, je suis ingénieur freelance auprès de l'Agence de Développement du Digital (ADD), l'opérateur national marocain du numérique : services Java 21 et Spring Boot, interfaces Angular et React, Redis et Kafka entre les services, Docker et Kubernetes pour la livraison, Keycloak pour l'identité. Mendix fait partie des outils lorsque le besoin s'y prête — ce n'est pas le centre du travail.",
       "Avant cela, deux ans chez Inetum Maroc, antenne du groupe ESN français, comme ingénieur logiciel : microservices, API REST, Angular, Docker, tests JUnit/Mockito, et Mendix lorsque la contrainte était la vitesse de livraison. Formation d'ingénieur Data & Software Engineering à l'INSEA, année d'échange en intelligence artificielle à l'Université Laval, stage data science chez Beneva à Québec.",
-      "Le volet data m'intéresse autant que le produit. Le diplôme d'ingénieur est en Data and Software Engineering ; le stage portait sur le clustering, la valeur vie client et les courbes de survie ; j'ai suivi le Data Engineering Zoomcamp de DataTalksClub — le pipeline d'ingestion des taxis new-yorkais sur ce site en est issu. Je vise des postes d'ingénieur logiciel et Full-Stack, et je suis tout autant ouvert aux rôles Data Engineer et Data Science.",
+      "Je construis une orientation data engineering et IA appliquée sur cette base d'ingénierie logicielle. Le diplôme INSEA est en Data and Software Engineering ; l'échange à Laval portait sur l'intelligence artificielle ; le stage Beneva sur le clustering, la valeur vie client et les courbes de survie ; le pipeline des taxis new-yorkais sur ce site vient du Data Engineering Zoomcamp de DataTalksClub. Je vise d'abord des postes d'ingénieur logiciel, y compris dans des équipes data-platform ou proches de l'IA, là où Java, Kafka et Python se transfèrent.",
     ],
     spoken: [
       { name: "Arabe", level: "Langue maternelle" },
@@ -300,7 +300,7 @@ export const fr: Dictionary = {
   contact: {
     heading: "Contact",
     intro:
-      "Basé à Rabat. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone, et aux rôles Data Engineer lorsque le socle Java/Kafka se transfère.",
+      "Basé à Rabat. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone, et aux équipes data-platform ou proches de l'IA lorsque Java, Kafka et Python se transfèrent.",
     email: "E-mail",
     phone: "Téléphone",
     linkedin: "LinkedIn",

@@ -1,6 +1,6 @@
 # zakariaejaafari.github.io
 
-Personal site for [Zakariae Jaafari](https://zakariaejaafari.github.io/en/) — Full-Stack Software Engineer, Rabat.
+Personal site for [Zakariae Jaafari](https://zakariaejaafari.github.io/en/) — Software Engineer · Data Engineering & AI, Rabat.
 
 Built from the CV and the three public GitHub repositories. Nothing on the site is invented.
 

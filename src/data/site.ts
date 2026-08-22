@@ -1,7 +1,7 @@
 export const site = {
   name: "Zakariae Jaafari",
-  title: "Full-Stack Software Engineer",
-  headline: "Java · Spring Boot · Angular · React",
+  title: "Software Engineer · Data Engineering & AI",
+  headline: "Java · Spring Boot · Kafka · Python",
   location: "Rabat, Morocco",
   availability: "Open to roles worldwide",
   email: "zakariae.jaafari98@gmail.com",
@@ -13,7 +13,7 @@ export const site = {
   cvHref: "/cv/Zakariae_Jaafari_CV_EN.pdf",
   cvLabel: "Download CV",
   description:
-    "Full-Stack Software Engineer in Rabat. Java, Spring Boot, Angular and React — microservices, and the front ends that sit on them. Open to roles worldwide.",
+    "Software Engineer in Rabat. Java, Spring Boot, Kafka and Python — software systems first, with a direction toward data engineering and applied AI.",
   languages: [
     { name: "Arabic", level: "Native" },
     { name: "French", level: "Fluent" },

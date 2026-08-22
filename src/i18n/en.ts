@@ -2,9 +2,9 @@ import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
   meta: {
-    title: "Zakariae Jaafari — Full-Stack Software Engineer",
+    title: "Zakariae Jaafari — Software Engineer · Data Engineering & AI",
     description:
-      "Full-Stack Software Engineer in Rabat. Java, Spring Boot, Angular and React — microservices, data pipelines, and the front ends that sit on them. Open to Software, Full-Stack, Data Engineer and Data Science roles worldwide.",
+      "Software Engineer in Rabat. Java, Spring Boot, Kafka and Python — software systems first, moving toward data engineering and applied AI. Open to Software Engineer and Full-Stack roles in French-speaking Europe.",
   },
   nav: {
     about: "About",
@@ -23,10 +23,10 @@ export const en: Dictionary = {
   hero: {
     kickerLocation: "Rabat, Morocco",
     kickerAvailability: "Open to roles worldwide",
-    title: "Full-Stack Software Engineer",
-    headline: "Java · Spring Boot · Angular · React",
+    title: "Software Engineer · Data Engineering & AI",
+    headline: "Java · Spring Boot · Kafka · Python",
     summary:
-      "Full-stack engineer with 4+ years delivering Java 21 and Spring Boot systems for public-sector and enterprise clients: Angular and React interfaces, event-driven microservices, Keycloak IAM. Based in Rabat. Works in French, English and Arabic. Open to Software Engineer and Full-Stack roles in French-speaking Europe, and to Data Engineer roles where the Java/Kafka background transfers.",
+      "Software engineer with 4+ years delivering Java 21 and Spring Boot systems for public-sector and enterprise clients: event-driven microservices, Angular and React, Keycloak IAM. Building toward data engineering and applied AI. Based in Rabat. Works in French, English and Arabic. Open to Software Engineer and Full-Stack roles in French-speaking Europe.",
     viewProjects: "View projects",
     photoAlt:
       "Portrait of Zakariae Jaafari in a white shirt, against a light background.",
@@ -34,9 +34,9 @@ export const en: Dictionary = {
   about: {
     heading: "About",
     paragraphs: [
-      "I am a Full-Stack Software Engineer in Rabat. Since September 2024 I have been a freelance software engineer at Agence de Développement du Digital (ADD), Morocco's national digital development agency: Java 21 and Spring Boot services, Angular and React interfaces, Redis and Kafka between services, Docker and Kubernetes for delivery, Keycloak for identity. Mendix is one of the tools I use when the brief calls for it — not the centre of the work.",
+      "I am a Software Engineer in Rabat. Since September 2024 I have been a freelance software engineer at Agence de Développement du Digital (ADD), Morocco's national digital development agency: Java 21 and Spring Boot services, Angular and React interfaces, Redis and Kafka between services, Docker and Kubernetes for delivery, Keycloak for identity. Mendix is one of the tools I use when the brief calls for it — not the centre of the work.",
       "Before that I spent two years at Inetum Morocco, the local arm of the French IT services group, as a software engineer: microservices, REST APIs, Angular, Docker, JUnit/Mockito tests, and Mendix when rapid delivery was the constraint. I trained as a Data and Software Engineer at INSEA, spent an exchange year in Artificial Intelligence at Université Laval, and interned in data science at Beneva in Québec.",
-      "I care about the data side of the stack as much as the product side. The engineering degree is in Data and Software Engineering; the internship was clustering, lifetime value and survival curves; and I followed the DataTalksClub Data Engineering Zoomcamp — the NYC taxi ingestion pipeline on this site comes from that work. I am looking for Software Engineer and Full-Stack roles, and I am equally open to Data Engineer and Data Science positions.",
+      "I am building toward data engineering and applied AI on that software-engineering base. The INSEA degree is in Data and Software Engineering; the Laval exchange was in Artificial Intelligence; the Beneva internship was clustering, lifetime value and survival curves; the NYC taxi pipeline on this site comes from the DataTalksClub Data Engineering Zoomcamp. I look for Software Engineer roles first, including data-platform and AI-adjacent teams where Java, Kafka and Python transfer.",
     ],
     spoken: [
       { name: "Arabic", level: "Native" },
@@ -299,7 +299,7 @@ export const en: Dictionary = {
   contact: {
     heading: "Contact",
     intro:
-      "Based in Rabat. Open to Software Engineer and Full-Stack roles in French-speaking Europe, and to Data Engineer roles where the Java/Kafka background transfers.",
+      "Based in Rabat. Open to Software Engineer and Full-Stack roles in French-speaking Europe, and to data-platform or AI-adjacent engineering where Java, Kafka and Python transfer.",
     email: "Email",
     phone: "Phone",
     linkedin: "LinkedIn",
