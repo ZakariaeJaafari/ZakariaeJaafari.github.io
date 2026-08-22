@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # editor
 .vscode/
+
+# leftover locked copies of superseded CV filenames
+public/cv/CV_Zakariae_Jaafari.pdf
+public/cv/CV_Zakariae_Jaafari_EN.pdf
+public/cv/CV_Zakariae_Jaafari_FR.pdf
