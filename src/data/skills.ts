@@ -7,31 +7,47 @@ export const skills: SkillGroup[] = [
   {
     name: "Backend",
     items: [
-      "Java",
+      "Java 21",
       "Spring Boot",
-      "Spring Data",
+      "Spring Data JPA",
+      "Hibernate",
       "Spring Security",
       "Spring Cloud",
-      "REST",
-      "OData",
+      "REST APIs",
       "Microservices",
+      "Mendix",
     ],
   },
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "Angular", "React", "HTML", "CSS"],
+    items: ["TypeScript", "JavaScript", "Angular", "React"],
   },
   {
     name: "Data & messaging",
-    items: ["SQL", "PL/SQL", "Oracle DB", "Redis", "Kafka", "ETL", "SSIS"],
+    items: [
+      "SQL",
+      "PostgreSQL",
+      "Oracle DB",
+      "Flyway",
+      "Redis",
+      "Kafka",
+      "Keycloak / IAM",
+    ],
   },
   {
-    name: "Security",
-    items: ["Keycloak / IAM"],
-  },
-  {
-    name: "DevOps",
-    items: ["Docker", "Kubernetes", "GitLab", "Jenkins", "Azure"],
+    name: "Platform",
+    items: [
+      "Docker",
+      "Kubernetes",
+      "Maven",
+      "Git",
+      "GitLab",
+      "Jenkins",
+      "CI/CD",
+      "JUnit",
+      "Mockito",
+      "Azure",
+    ],
   },
   {
     name: "Data engineering",
@@ -48,13 +64,5 @@ export const skills: SkillGroup[] = [
       "Kestra",
       "Spark",
     ],
-  },
-  {
-    name: "Data science",
-    items: ["scikit-learn", "PyTorch", "Power BI", "ML / DL"],
-  },
-  {
-    name: "Low-code",
-    items: ["Mendix"],
   },
 ];

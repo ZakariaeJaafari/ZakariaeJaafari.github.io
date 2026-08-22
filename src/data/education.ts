@@ -12,6 +12,7 @@ export interface Certification {
   issuer: string;
   location: string;
   date: string;
+  credential?: string;
 }
 
 export const education: EducationItem[] = [
@@ -37,6 +38,7 @@ export const certifications: Certification[] = [
     title: "Rapid Developer Certificate",
     issuer: "Mendix",
     location: "",
-    date: "Since Dec 2023",
+    date: "Jan 2024",
+    credential: "69110",
   },
 ];

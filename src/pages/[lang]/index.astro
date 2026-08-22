@@ -6,6 +6,7 @@ import Experience from "../../components/Experience.astro";
 import Projects from "../../components/Projects.astro";
 import Skills from "../../components/Skills.astro";
 import Education from "../../components/Education.astro";
+import Recommendation from "../../components/Recommendation.astro";
 import Contact from "../../components/Contact.astro";
 import { getDictionary, locales, localeFromParam } from "../../i18n";
 
@@ -24,5 +25,6 @@ const t = getDictionary(locale);
   <Projects locale={locale} t={t} />
   <Skills t={t} />
   <Education t={t} />
+  <Recommendation t={t} />
   <Contact locale={locale} t={t} />
 </BaseLayout>

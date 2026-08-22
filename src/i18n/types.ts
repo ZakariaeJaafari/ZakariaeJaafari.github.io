@@ -69,6 +69,7 @@ export interface Dictionary {
     solution: string;
     architecture: string;
     inRepo: string;
+    screenshots: string;
     decisions: string;
     technologies: string;
     links: string;
@@ -94,7 +95,13 @@ export interface Dictionary {
       end: string;
       note?: string;
     }[];
-    certs: { title: string; issuer: string; date: string }[];
+    certs: { title: string; issuer: string; date: string; credential?: string }[];
+  };
+  recommendation: {
+    heading: string;
+    quote: string;
+    attribution: string;
+    context: string;
   };
   contact: {
     heading: string;

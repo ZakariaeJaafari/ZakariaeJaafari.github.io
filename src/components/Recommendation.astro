@@ -1,0 +1,40 @@
+---
+import { site } from "../data/site";
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+---
+
+<section
+  id="recommendation"
+  class="border-b border-line"
+  aria-labelledby="recommendation-heading"
+>
+  <div class="reveal mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <h2
+      id="recommendation-heading"
+      class="font-serif text-3xl tracking-tight text-ink"
+    >
+      {t.recommendation.heading}
+    </h2>
+    <blockquote class="mt-8 max-w-3xl border-s-2 border-accent ps-6">
+      <p class="text-[1.08rem] leading-relaxed text-muted">
+        “{t.recommendation.quote}”
+      </p>
+      <footer class="mt-5">
+        <cite class="not-italic">
+          <a
+            href={site.linkedin}
+            class="font-medium text-ink no-underline hover:text-accent"
+            rel="noopener noreferrer">{t.recommendation.attribution}</a
+          >
+        </cite>
+        <p class="text-sm text-muted">{t.recommendation.context}</p>
+      </footer>
+    </blockquote>
+  </div>
+</section>

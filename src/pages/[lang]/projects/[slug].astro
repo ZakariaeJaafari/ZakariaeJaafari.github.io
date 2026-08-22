@@ -74,6 +74,27 @@ const title = `${project.name} — ${t.hero.title}`;
             </h2>
             <p class="mt-3 text-[1.05rem] text-muted">{copy.description}</p>
           </section>
+          {
+            project.screenshots && project.screenshots.length > 0 && (
+              <section class="reveal" aria-labelledby="screenshots-heading">
+                <h2 id="screenshots-heading" class="font-serif text-2xl text-ink">
+                  {t.projects.screenshots}
+                </h2>
+                <div class="mt-4 grid gap-4">
+                  {project.screenshots.map((shot) => (
+                    <figure class="border border-line bg-surface">
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        class="w-full"
+                        loading="lazy"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </section>
+            )
+          }
           <section class="reveal" aria-labelledby="problem-heading">
             <h2 id="problem-heading" class="font-serif text-2xl text-ink">
               {t.projects.problem}

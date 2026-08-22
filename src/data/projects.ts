@@ -13,6 +13,7 @@ export interface Project {
   github: string;
   demo?: string;
   demoLabel?: string;
+  screenshots?: { src: string; alt: string }[];
 }
 
 export const projects: Project[] = [
@@ -65,6 +66,16 @@ export const projects: Project[] = [
       "Docker",
     ],
     github: "https://github.com/ZakariaeJaafari/chantiepro",
+    screenshots: [
+      {
+        src: "/projects/chantiepro/login.png",
+        alt: "ChantiePro login screen — construction-site management sign-in",
+      },
+      {
+        src: "/projects/chantiepro/register.png",
+        alt: "ChantiePro registration form",
+      },
+    ],
   },
   {
     slug: "nyc-taxi-ingestion-pipeline",
@@ -122,11 +133,8 @@ export const projects: Project[] = [
       "URL input and Detect action against Clarifai’s face-detection model",
       "Normalised-to-pixel coordinate mapping against the rendered image",
       "Loading and error states, including a missing API key",
-      "Deployed on GitHub Pages",
     ],
     stack: ["React", "JavaScript", "Clarifai API", "Webpack"],
     github: "https://github.com/ZakariaeJaafari/face-detection-react",
-    demo: "https://zakariaejaafari.github.io/face-detection-react/",
-    demoLabel: "Live demo",
   },
 ];

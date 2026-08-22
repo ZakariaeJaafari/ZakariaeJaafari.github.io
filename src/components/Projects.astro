@@ -31,6 +31,21 @@ const { locale, t } = Astro.props;
           const copy = t.projectPages[project.slug];
           return (
             <li class="project-card reveal border border-line bg-surface p-6 sm:p-8">
+              {
+                project.screenshots?.[0] && (
+                  <a
+                    href={`/${locale}/projects/${project.slug}/`}
+                    class="mb-5 block overflow-hidden border border-line"
+                  >
+                    <img
+                      src={project.screenshots[0].src}
+                      alt={project.screenshots[0].alt}
+                      class="aspect-[16/9] w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  </a>
+                )
+              }
               <div class="flex flex-wrap items-baseline justify-between gap-3">
                 <h3 class="font-serif text-2xl text-ink">
                   <a
