@@ -5,7 +5,19 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://zakariaejaafari.github.io",
-  integrations: [sitemap()],
+  trailingSlash: "always",
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en-GB",
+          fr: "fr-FR",
+          ar: "ar-MA",
+        },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

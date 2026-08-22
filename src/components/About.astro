@@ -1,41 +1,27 @@
 ---
-import { site } from "../data/site";
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <section id="about" class="border-b border-line" aria-labelledby="about-heading">
-  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12">
+  <div
+    class="reveal mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-12"
+  >
     <div class="lg:col-span-4">
-      <h2
-        id="about-heading"
-        class="font-serif text-3xl tracking-tight text-ink"
-      >
-        About
+      <h2 id="about-heading" class="font-serif text-3xl tracking-tight text-ink">
+        {t.about.heading}
       </h2>
     </div>
     <div class="max-w-2xl space-y-5 text-[1.05rem] text-muted lg:col-span-8">
-      <p>
-        I am a Full-Stack Engineer in Rabat. Since September 2024 I have been a
-        Mendix consultant at DXC Technology / ADD, delivering enterprise
-        applications with Mendix, Java, Spring Boot and React — custom widgets
-        and JavaScript actions on the front, microflows, Java actions, REST and
-        OData on the back.
-      </p>
-      <p>
-        Before that I spent two years at Inetum as a study and development
-        engineer: Java and Spring microservices, Angular interfaces,
-        containerisation with Docker, Keycloak, and Mendix. I trained as a Data
-        &amp; Software Engineer at INSEA, spent an exchange year in Artificial
-        Intelligence at Université Laval, and interned in data science at Beneva
-        in Québec.
-      </p>
-      <p>
-        Most of the public work on my GitHub is backend-shaped: how a domain
-        splits into services, what belongs on a request path, and what belongs
-        on a broker. I still build the front ends.
-      </p>
+      {t.about.paragraphs.map((p) => <p>{p}</p>)}
       <ul class="flex flex-wrap gap-x-6 gap-y-1 pt-2 font-mono text-sm">
         {
-          site.languages.map((lang) => (
+          t.about.spoken.map((lang) => (
             <li>
               <span class="text-ink">{lang.name}</span>
               <span class="text-muted"> — {lang.level}</span>

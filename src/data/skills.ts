@@ -3,10 +3,7 @@ export interface SkillGroup {
   items: string[];
 }
 
-/**
- * Skills listed on the CV, plus technologies verified in public GitHub
- * repositories (ChantiePro, NYC taxi pipeline). Nothing is invented.
- */
+/** Skills as listed on the August 2026 CV. */
 export const skills: SkillGroup[] = [
   {
     name: "Backend",
@@ -16,76 +13,37 @@ export const skills: SkillGroup[] = [
       "Spring Data",
       "Spring Security",
       "Spring Cloud",
-      "Maven",
       "REST",
       "OData",
+      "Microservices",
     ],
   },
   {
     name: "Frontend",
-    items: [
-      "TypeScript",
-      "JavaScript",
-      "Angular",
-      "React",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-    ],
+    items: ["TypeScript", "JavaScript", "Angular", "React", "HTML", "CSS"],
+  },
+  {
+    name: "Data & messaging",
+    items: ["SQL", "PL/SQL", "Oracle DB", "Redis", "Kafka"],
+  },
+  {
+    name: "Security",
+    items: ["Keycloak / IAM"],
+  },
+  {
+    name: "DevOps",
+    items: ["Docker", "Kubernetes", "GitLab", "Jenkins", "Azure"],
   },
   {
     name: "Low-code",
     items: ["Mendix"],
   },
   {
-    name: "Architecture",
-    items: ["Microservices", "Event-driven systems", "REST APIs", "BPMN", "UML"],
-  },
-  {
-    name: "Data & messaging",
-    items: [
-      "SQL",
-      "PL/SQL",
-      "T-SQL",
-      "OQL",
-      "PostgreSQL",
-      "Apache Kafka",
-      "Redis",
-      "ETL",
-      "SSIS",
-      "Oracle Database",
-    ],
-  },
-  {
-    name: "Security",
-    items: ["Keycloak", "Spring Security", "JWT"],
-  },
-  {
-    name: "DevOps",
-    items: [
-      "Docker",
-      "Git",
-      "GitLab",
-      "Jenkins",
-      "SonarQube",
-      "GitHub Actions",
-      "JUnit",
-    ],
-  },
-  {
-    name: "Methodologies",
-    items: ["Agile", "Scrum", "Jira"],
-  },
-  {
     name: "Data science",
-    items: [
-      "Python",
-      "scikit-learn",
-      "PyTorch",
-      "Power BI",
-      "Azure",
-      "SAS",
-      "R",
-    ],
+    items: ["Python", "scikit-learn", "PyTorch", "Power BI", "ML / DL"],
+  },
+  {
+    name: "AI tools",
+    items: ["Claude", "Cursor", "Codex"],
   },
 ];

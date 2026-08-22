@@ -1,5 +1,12 @@
 ---
 import { site } from "../data/site";
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <footer class="border-t border-line">
@@ -9,7 +16,7 @@ import { site } from "../data/site";
     <p>
       <span class="text-ink">{site.name}</span>
       <span aria-hidden="true"> · </span>
-      {site.location}
+      {t.footer.nameLine}
     </p>
     <p>
       <a href={site.github} class="text-muted no-underline hover:text-ink"
@@ -24,9 +31,6 @@ import { site } from "../data/site";
         href={`mailto:${site.email}`}
         class="text-muted no-underline hover:text-ink">{site.email}</a
       >
-    </p>
-    <p class="text-xs">
-      Static site, Astro. Deployed from GitHub Actions to GitHub Pages.
     </p>
   </div>
 </footer>

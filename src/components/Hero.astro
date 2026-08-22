@@ -1,18 +1,27 @@
 ---
 import { Image } from "astro:assets";
 import { site } from "../data/site";
+import { cvByLocale, type Dictionary, type Locale } from "../i18n";
 import photo from "../assets/zakariae-jaafari.jpg";
+
+interface Props {
+  locale: Locale;
+  t: Dictionary;
+}
+
+const { locale, t } = Astro.props;
+const cv = cvByLocale[locale];
 ---
 
-<section class="border-b border-line" aria-labelledby="hero-name">
+<section class="hero-panel border-b border-line" aria-labelledby="hero-name">
   <div
     class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.4fr_0.8fr] lg:gap-16 lg:py-24"
   >
-    <div>
+    <div class="reveal">
       <p class="font-mono text-xs tracking-[0.18em] text-accent uppercase">
-        {site.location}
+        {t.hero.kickerLocation}
         <span aria-hidden="true"> · </span>
-        {site.availability}
+        {t.hero.kickerAvailability}
       </p>
       <h1
         id="hero-name"
@@ -21,55 +30,53 @@ import photo from "../assets/zakariae-jaafari.jpg";
         {site.name}
       </h1>
       <p class="mt-4 text-xl text-accent sm:text-2xl">
-        {site.title}
+        {t.hero.title}
       </p>
       <p class="mt-2 font-mono text-sm text-muted">
-        {site.headline}
+        {t.hero.headline}
       </p>
       <p class="mt-6 max-w-xl text-[1.05rem] text-muted">
-        I build Java and Spring Boot backends, the Angular and React interfaces
-        that sit on them, and enterprise applications on Mendix. Based in Rabat;
-        available for Software Engineer and Full-Stack Engineer roles worldwide.
+        {t.hero.summary}
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a
-          href="#projects"
-          class="inline-flex items-center bg-accent px-4 py-2.5 text-sm font-medium text-paper no-underline hover:bg-accent-hover"
+          href={`/${locale}/#projects`}
+          class="inline-flex items-center bg-accent px-4 py-2.5 text-sm font-medium text-paper no-underline transition-colors hover:bg-accent-hover"
         >
-          View projects
+          {t.hero.viewProjects}
         </a>
         <a
-          href={site.cvHref}
-          class="inline-flex items-center border border-ink px-4 py-2.5 text-sm font-medium text-ink no-underline hover:bg-ink hover:text-paper"
+          href={cv.href}
+          class="inline-flex items-center border border-ink px-4 py-2.5 text-sm font-medium text-ink no-underline transition-colors hover:bg-ink hover:text-paper"
           download
         >
-          {site.cvLabel}
+          {t.nav.cv}
         </a>
         <a
           href={site.linkedin}
-          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline hover:text-ink"
+          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline transition-colors hover:text-ink"
           rel="me noopener noreferrer"
         >
           LinkedIn
         </a>
         <a
           href={site.github}
-          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline hover:text-ink"
+          class="inline-flex items-center px-3 py-2.5 text-sm text-muted no-underline transition-colors hover:text-ink"
           rel="me noopener noreferrer"
         >
           GitHub
         </a>
       </div>
     </div>
-    <div class="justify-self-center lg:justify-self-end">
+    <div class="reveal reveal-delay justify-self-center lg:justify-self-end">
       <Image
         src={photo}
-        alt="Portrait of Zakariae Jaafari in a white shirt, against a light background."
+        alt={t.hero.photoAlt}
         width={360}
         height={360}
         densities={[1, 2]}
         quality={82}
-        class="h-56 w-56 rounded-full object-cover ring-1 ring-line sm:h-72 sm:w-72"
+        class="photo-ring h-56 w-56 rounded-full object-cover sm:h-72 sm:w-72"
       />
     </div>
   </div>

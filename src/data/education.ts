@@ -4,6 +4,7 @@ export interface EducationItem {
   location: string;
   start: string;
   end: string;
+  note?: string;
 }
 
 export interface Certification {
@@ -15,39 +16,27 @@ export interface Certification {
 
 export const education: EducationItem[] = [
   {
-    title: "Master’s in Computer Science — Artificial Intelligence",
-    school: "Université Laval (exchange programme)",
+    title: "M.Sc. in Computer Science — Artificial Intelligence",
+    school: "Université Laval",
     location: "Québec, Canada",
     start: "Aug 2021",
     end: "May 2022",
+    note: "Exchange programme",
   },
   {
-    title: "State Engineer Diploma — Data & Software Engineering",
-    school: "Institut National de Statistique et d’Économie Appliquée (INSEA)",
+    title: "Engineering Degree in Data and Software Engineering",
+    school: "INSEA",
     location: "Rabat, Morocco",
     start: "Sept 2019",
     end: "May 2022",
-  },
-  {
-    title: "MPSI preparatory classes",
-    school: "CPGE Salmane El Farissi",
-    location: "Salé, Morocco",
-    start: "Sept 2016",
-    end: "June 2019",
   },
 ];
 
 export const certifications: Certification[] = [
   {
-    title: "Mendix Intermediate Developer",
+    title: "Rapid Developer Certificate",
     issuer: "Mendix",
-    location: "Rabat",
-    date: "Dec 2024",
-  },
-  {
-    title: "Mendix Rapid Developer",
-    issuer: "Mendix",
-    location: "Rabat",
-    date: "Dec 2023",
+    location: "",
+    date: "Since Dec 2023",
   },
 ];

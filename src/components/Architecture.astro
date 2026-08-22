@@ -1,4 +1,12 @@
 ---
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
+
 const services = [
   { name: "auth", port: "8081", role: "Registration, login, roles" },
   { name: "user", port: "8082", role: "Profiles and organisations" },
@@ -18,11 +26,11 @@ const services = [
 
 <figure class="border border-line bg-paper p-5 sm:p-6">
   <figcaption class="font-mono text-xs tracking-wide text-muted uppercase">
-    Request path and backing services
+    {t.projects.pathLabel}
   </figcaption>
   <ol
     class="mt-4 grid gap-2 font-mono text-xs sm:grid-cols-3"
-    aria-label="ChantiePro request path"
+    aria-label={t.projects.pathLabel}
   >
     <li class="border border-line bg-surface px-3 py-3">
       <p class="text-accent">01</p>
@@ -41,7 +49,7 @@ const services = [
     </li>
   </ol>
   <h3 class="mt-6 font-mono text-xs tracking-wide text-muted uppercase">
-    Business services
+    {t.projects.business}
   </h3>
   <ul class="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
     {
@@ -57,7 +65,7 @@ const services = [
     }
   </ul>
   <p class="mt-5 font-mono text-xs text-muted">
-    Kafka domain events → notification, audit, finance · PostgreSQL 16
-    (schema per service) · Redis · MinIO · Prometheus / Grafana / Loki / Zipkin
+    Kafka → notification, audit, finance · PostgreSQL 16 · Redis · MinIO ·
+    Prometheus / Grafana / Loki / Zipkin
   </p>
 </figure>

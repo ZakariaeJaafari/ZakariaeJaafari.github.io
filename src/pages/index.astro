@@ -1,25 +1,12 @@
----
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Experience from "../components/Experience.astro";
-import Projects from "../components/Projects.astro";
-import Skills from "../components/Skills.astro";
-import Education from "../components/Education.astro";
-import Contact from "../components/Contact.astro";
-import { site } from "../data/site";
----
-
-<BaseLayout
-  title={`${site.name} — Full-Stack Engineer`}
-  description={site.description}
-  path="/"
->
-  <Hero />
-  <About />
-  <Experience />
-  <Projects />
-  <Skills />
-  <Education />
-  <Contact />
-</BaseLayout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=/en/" />
+    <link rel="canonical" href="https://zakariaejaafari.github.io/en/" />
+    <title>Zakariae Jaafari</title>
+    <script is:inline>location.replace("/en/");</script>
+  </head>
+  <body>
+    <p><a href="/en/">Zakariae Jaafari</a></p>
+  </body>
+</html>

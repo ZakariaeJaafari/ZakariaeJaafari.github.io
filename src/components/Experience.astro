@@ -1,5 +1,12 @@
 ---
-import { experience } from "../data/experience";
+import { roleStacks } from "../data/stacks";
+import type { Dictionary } from "../i18n";
+
+interface Props {
+  t: Dictionary;
+}
+
+const { t } = Astro.props;
 ---
 
 <section
@@ -10,14 +17,14 @@ import { experience } from "../data/experience";
   <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
     <h2
       id="experience-heading"
-      class="font-serif text-3xl tracking-tight text-ink"
+      class="reveal font-serif text-3xl tracking-tight text-ink"
     >
-      Experience
+      {t.experience.heading}
     </h2>
     <ol class="mt-10 space-y-0 divide-y divide-line">
       {
-        experience.map((role) => (
-          <li class="grid gap-6 py-10 lg:grid-cols-12">
+        t.experience.roles.map((role) => (
+          <li class="reveal grid gap-6 py-10 lg:grid-cols-12">
             <div class="lg:col-span-4">
               <p class="font-mono text-xs tracking-wide text-muted uppercase">
                 {role.start} — {role.end}
@@ -34,14 +41,14 @@ import { experience } from "../data/experience";
               {role.summary && (
                 <p class="mb-4 text-[1.02rem] text-muted">{role.summary}</p>
               )}
-              <ul class="list-disc space-y-2 pl-5 text-[1.02rem] text-muted marker:text-accent">
+              <ul class="list-disc space-y-2 ps-5 text-[1.02rem] text-muted marker:text-accent">
                 {role.bullets.map((item) => (
                   <li>{item}</li>
                 ))}
               </ul>
               <p class="mt-5 font-mono text-xs leading-relaxed text-muted">
-                <span class="text-ink">Environment: </span>
-                {role.stack.join(" · ")}
+                <span class="text-ink">{t.experience.environment}: </span>
+                {(roleStacks[role.id] ?? []).join(" · ")}
               </p>
             </div>
           </li>

@@ -1,16 +1,25 @@
 ---
 import { site } from "../data/site";
+import { cvByLocale, type Dictionary, type Locale } from "../i18n";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
-const onHome = Astro.url.pathname === "/" || Astro.url.pathname === "/index.html";
-const prefix = onHome ? "" : "/";
+interface Props {
+  locale: Locale;
+  t: Dictionary;
+}
+
+const { locale, t } = Astro.props;
+const home = `/${locale}/`;
+const cv = cvByLocale[locale];
+const pathname = Astro.url.pathname;
 
 const links = [
-  { href: `${prefix}#about`, label: "About" },
-  { href: `${prefix}#experience`, label: "Experience" },
-  { href: `${prefix}#projects`, label: "Projects" },
-  { href: `${prefix}#skills`, label: "Skills" },
-  { href: `${prefix}#education`, label: "Education" },
-  { href: `${prefix}#contact`, label: "Contact" },
+  { href: `${home}#about`, label: t.nav.about },
+  { href: `${home}#experience`, label: t.nav.experience },
+  { href: `${home}#projects`, label: t.nav.projects },
+  { href: `${home}#skills`, label: t.nav.skills },
+  { href: `${home}#education`, label: t.nav.education },
+  { href: `${home}#contact`, label: t.nav.contact },
 ];
 ---
 
@@ -21,13 +30,13 @@ const links = [
     class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8"
   >
     <a
-      href={onHome ? "#main" : "/"}
+      href={home}
       class="font-serif text-lg tracking-tight text-ink no-underline"
     >
       {site.name}
     </a>
 
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-5 lg:flex" aria-label={t.nav.primary}>
       {
         links.map((link) => (
           <a
@@ -39,44 +48,48 @@ const links = [
         ))
       }
       <a
-        href={site.cvHref}
-        class="inline-flex items-center border border-ink px-3 py-1.5 text-[0.85rem] font-medium text-ink no-underline hover:bg-ink hover:text-paper"
+        href={cv.href}
+        class="inline-flex items-center border border-ink px-3 py-1.5 text-[0.85rem] font-medium text-ink no-underline transition-colors hover:bg-ink hover:text-paper"
         download
       >
-        {site.cvLabel}
+        {t.nav.cv}
       </a>
+      <LanguageSwitcher locale={locale} pathname={pathname} />
     </nav>
 
-    <details class="relative lg:hidden">
-      <summary
-        class="cursor-pointer list-none border border-line px-3 py-1.5 text-sm text-ink [&::-webkit-details-marker]:hidden"
-      >
-        Menu
-      </summary>
-      <div
-        class="absolute right-0 mt-2 w-56 border border-line bg-surface p-3 shadow-none"
-      >
-        <nav class="flex flex-col gap-1" aria-label="Mobile">
-          {
-            links.map((link) => (
-              <a
-                href={link.href}
-                class="px-2 py-1.5 text-sm text-ink no-underline hover:bg-paper"
-              >
-                {link.label}
-              </a>
-            ))
-          }
-          <a
-            href={site.cvHref}
-            class="mt-2 border border-ink px-2 py-1.5 text-center text-sm font-medium text-ink no-underline"
-            download
-          >
-            {site.cvLabel}
-          </a>
-        </nav>
-      </div>
-    </details>
+    <div class="flex items-center gap-2 lg:hidden">
+      <LanguageSwitcher locale={locale} pathname={pathname} />
+      <details class="relative">
+        <summary
+          class="cursor-pointer list-none border border-line px-3 py-1.5 text-sm text-ink [&::-webkit-details-marker]:hidden"
+        >
+          {t.nav.menu}
+        </summary>
+        <div
+          class="absolute end-0 z-50 mt-2 w-56 border border-line bg-surface p-3"
+        >
+          <nav class="flex flex-col gap-1" aria-label={t.nav.mobile}>
+            {
+              links.map((link) => (
+                <a
+                  href={link.href}
+                  class="px-2 py-1.5 text-sm text-ink no-underline hover:bg-paper"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+            <a
+              href={cv.href}
+              class="mt-2 border border-ink px-2 py-1.5 text-center text-sm font-medium text-ink no-underline"
+              download
+            >
+              {t.nav.cv}
+            </a>
+          </nav>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 
