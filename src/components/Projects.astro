@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { locale, t } = Astro.props;
+const featuredProjects = projects.filter((project) => project.featured);
 ---
 
 <section
@@ -27,7 +28,7 @@ const { locale, t } = Astro.props;
     </div>
     <ul class="mt-10 grid gap-6">
       {
-        projects.map((project) => {
+        featuredProjects.map((project) => {
           const copy = t.projectPages[project.slug];
           return (
             <li class="project-card reveal border border-line bg-surface p-6 sm:p-8">
@@ -40,7 +41,7 @@ const { locale, t } = Astro.props;
                     <img
                       src={project.screenshots[0].src}
                       alt={project.screenshots[0].alt}
-                      class="aspect-[16/9] w-full object-cover object-top"
+                      class="aspect-[16/9] w-full bg-paper object-contain"
                       loading="lazy"
                     />
                   </a>

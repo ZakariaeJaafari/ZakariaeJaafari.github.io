@@ -17,7 +17,7 @@ export interface Certification {
 
 export const education: EducationItem[] = [
   {
-    title: "M.Sc. in Computer Science — Artificial Intelligence",
+    title: "Graduate exchange programme — Artificial Intelligence",
     school: "Université Laval",
     location: "Québec, Canada",
     start: "Aug 2021",

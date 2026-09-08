@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   oneLiner: string;
   role: "Flagship" | "Supporting";
+  featured: boolean;
   year?: string;
   description: string;
   problem: string;
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     oneLiner:
       "Event-driven construction management platform: sixteen Spring Boot services, Kafka, and an Angular 18 front end.",
     role: "Flagship",
+    featured: true,
     description:
       "A personal engineering project that models a construction firm as thirteen business services plus three platform services. Each service owns a private PostgreSQL schema. Changes that other parts of the system must react to travel as Kafka domain events. An Angular 18 workspace in Nx sits on top; Prometheus, Grafana, Loki and Zipkin sit underneath.",
     problem:
@@ -79,16 +81,17 @@ export const projects: Project[] = [
   },
   {
     slug: "data-analytics",
-    name: "data-analytics",
+    name: "NYC Taxi dbt Analytics",
     oneLiner:
       "Analytics engineering for NYC TLC trips: dbt and DuckDB turn raw Parquet into a tested star schema.",
     role: "Flagship",
+    featured: true,
     description:
       "An analytics-engineering warehouse for NYC yellow and green taxi trips. ingest_data.py lands monthly files as Parquet in DuckDB (prod schema). dbt then builds staging, intermediate, and marts — dimensions for zones and vendors, an incremental fct_trips, and monthly zone revenue. Seeds, macros, dbt_utils, and generated docs are in the repo. Coursework from DataTalksClub Zoomcamp module 04, run locally instead of BigQuery.",
     problem:
       "TLC publishes tens of millions of trip rows with inconsistent yellow/green column names. Analysts need typed, documented models and a grain they can join — not a pile of CSVs.",
     solution:
-      "Load Parquet into DuckDB, then a dbt project with a classic staging → intermediate → marts layout. Staging casts and renames; intermediate unions services, builds a surrogate trip_id, and deduplicates; marts form a star schema. The dev target samples January 2019 so local runs stay bounded. After ingest, prod.yellow_tripdata holds 109,047,518 rows and prod.green_tripdata 7,778,101; fct_trips on the sampled dev target has 8,095,489 rows.",
+      "Load Parquet into DuckDB, then a dbt project with a classic staging → intermediate → marts layout. Staging casts and renames; intermediate unions services and creates a deterministic trip-grain key; marts form a star schema. The dev target samples January 2019 so local runs stay bounded. After correcting a weak key that collapsed 202,906 valid records, fct_trips retains all 8,298,395 sampled rows and the regression is covered in CI.",
     features: [
       "ingest_data.py: CSV.gz → Parquet → DuckDB prod schema",
       "Staging for yellow and green with shared naming",
@@ -125,10 +128,11 @@ export const projects: Project[] = [
   },
   {
     slug: "dataplatforme-bruin",
-    name: "DataPlatforme-Bruin",
+    name: "NYC Taxi ELT with Bruin",
     oneLiner:
       "Bruin ELT on DuckDB and MotherDuck: batched PyArrow ingestion, staging quality checks, daily trip reports.",
     role: "Supporting",
+    featured: true,
     description:
       "An end-to-end NYC taxi ELT pipeline on Bruin. Python assets fetch TLC parquet, yield 150k-row PyArrow batches, and land in DuckDB or MotherDuck. SQL assets filter, join a payment lookup, and deduplicate in staging, then aggregate a trips_report. Same pipeline code, two environments. Zoomcamp module 05 (data platforms).",
     problem:
@@ -156,16 +160,17 @@ export const projects: Project[] = [
   },
   {
     slug: "workflow-orchestration",
-    name: "Workflow-Orchestration",
+    name: "NYC Taxi Orchestration with Kestra",
     oneLiner:
       "Kestra scheduled ETL: monthly NYC TLC CSVs into PostgreSQL with staging COPY and MERGE.",
     role: "Supporting",
+    featured: false,
     description:
       "A Kestra flow (postgres_taxi_scheduled, namespace zoomcamp) that wget’s a monthly TLC CSV, COPY’s it into a staging table, stamps a deterministic MD5 unique_row_id, and MERGE’s into yellow_tripdata or green_tripdata. Docker Compose runs Kestra, two Postgres instances, and pgAdmin. Zoomcamp orchestration module.",
     problem:
       "Monthly taxi files must land in PostgreSQL without duplicating rows when a month is re-run, and yellow vs green schemas differ.",
     solution:
-      "Inputs select taxi type. Shell extract gunzips the GitHub release. Branching tasks create typed tables, COPY into staging, then MERGE on unique_row_id. Cron: green 09:00 on the 1st, yellow 10:00. Concurrency limit 1. Credentials in compose are local-dev defaults, not production secrets.",
+      "Inputs select taxi type and source month. Shell extract gunzips the GitHub release. Branching tasks create typed tables, COPY into staging, then MERGE on unique_row_id. Cron: green 09:00 on the 1st, yellow 10:00. A re-verified January 2021 run completed successfully and loaded 7,774,773 yellow-trip rows.",
     features: [
       "Kestra standalone server with Postgres metadata store",
       "Staging COPY + MERGE skip-duplicates load",
@@ -175,6 +180,16 @@ export const projects: Project[] = [
     ],
     stack: ["Kestra", "PostgreSQL", "Docker Compose", "SQL"],
     github: "https://github.com/ZakariaeJaafari/Workflow-Orchestration",
+    screenshots: [
+      {
+        src: "/projects/workflow-orchestration/kestra-success-execution.png",
+        alt: "Kestra execution overview showing the January 2021 taxi pipeline completed successfully",
+      },
+      {
+        src: "/projects/workflow-orchestration/kestra-success-topology.png",
+        alt: "Kestra topology for the successful PostgreSQL staging and merge execution",
+      },
+    ],
   },
   {
     slug: "nyc-taxi-ingestion-pipeline",
@@ -182,6 +197,7 @@ export const projects: Project[] = [
     oneLiner:
       "Containerised, memory-bounded job that streams NYC yellow-taxi trip files into PostgreSQL.",
     role: "Supporting",
+    featured: false,
     description:
       "A Dockerised ingestion job that loads monthly NYC TLC yellow-taxi CSVs into PostgreSQL in fixed-size chunks, so peak memory stays flat regardless of file size. Built while working through the DataTalksClub Data Engineering Zoomcamp Docker module, then tidied into a standalone job.",
     problem:

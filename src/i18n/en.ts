@@ -2,9 +2,9 @@ import type { Dictionary } from "./types";
 
 export const en: Dictionary = {
   meta: {
-    title: "Zakariae Jaafari — Software Engineer · Data Engineer",
+    title: "Zakariae Jaafari — Software Engineer · Data Engineering",
     description:
-      "Software Engineer and Data Engineer in Rabat. Java, Spring Boot, Kafka, dbt, DuckDB and Python. Open to Software Engineer and Data Engineer roles in French-speaking Europe.",
+      "Software engineer in Rabat focused on Java and Spring backend systems, with tested data-engineering projects in Python, dbt, DuckDB and Bruin.",
   },
   nav: {
     about: "About",
@@ -22,11 +22,11 @@ export const en: Dictionary = {
   },
   hero: {
     kickerLocation: "Rabat, Morocco",
-    kickerAvailability: "Open to roles worldwide",
-    title: "Software Engineer · Data Engineer",
-    headline: "Java 21 · Spring Boot · Kafka · DuckDB · dbt · Python",
+    kickerAvailability: "Open to French-speaking Europe",
+    title: "Software Engineer · Data Engineering",
+    headline: "Java 21 · Spring Boot · Kafka · Python · dbt · DuckDB",
     summary:
-      "Software engineer with 4+ years delivering Java 21 and Spring Boot systems for public-sector and enterprise clients, plus tested data pipelines (dbt, DuckDB, Bruin, Kestra). Based in Rabat. Works in French, English and Arabic. Open to Software Engineer and Data Engineer roles in French-speaking Europe.",
+      "Software engineer with 4+ years building Java and Spring Boot services for public-sector and enterprise teams. Public projects extend that backend foundation into tested data pipelines with Python, dbt, DuckDB and Bruin.",
     viewProjects: "View projects",
     photoAlt:
       "Portrait of Zakariae Jaafari in a white shirt, against a light background.",
@@ -34,9 +34,8 @@ export const en: Dictionary = {
   about: {
     heading: "About",
     paragraphs: [
-      "I am a Software Engineer in Rabat, with a Data Engineer specialisation built on that base. Since September 2024 I have been a freelance software engineer at Agence de Développement du Digital (ADD), Morocco's national digital development agency: Java 21 and Spring Boot services, Angular and React interfaces, Redis and Kafka between services, Docker and Kubernetes for delivery, Keycloak for identity. Mendix is one of the tools I use when the brief calls for it — not the centre of the work.",
-      "Before that I spent two years at Inetum Morocco, the local arm of the French IT services group, as a software engineer: microservices, REST APIs, Angular, Docker, JUnit/Mockito tests, and Mendix when rapid delivery was the constraint. I trained as a Data and Software Engineer at INSEA, spent an exchange year in Artificial Intelligence at Université Laval, and interned in data science at Beneva in Québec.",
-      "The data-engineering work on this site is project work, not a job title at ADD or Inetum: dbt and DuckDB models on 109 million NYC taxi rows, a Bruin ELT pipeline on MotherDuck (6.4 million ingested rows), and a Kestra flow into PostgreSQL. I look for Software Engineer and Data Engineer roles, including data-platform teams where Java, Kafka and Python transfer.",
+      "I am a software engineer in Rabat with 4+ years across public-sector delivery and IT services. At the Agence de Développement du Digital (ADD), I build Java 21 and Spring Boot services, Angular and React interfaces, Kafka and Redis integrations, Keycloak IAM, and Docker/Kubernetes delivery. Previously, I developed Spring microservices and Angular applications at Inetum Morocco.",
+      "My public data-engineering work complements that backend experience: a tested dbt/DuckDB star schema over 109 million source rows, a Bruin pipeline running on DuckDB and MotherDuck, and a verified Kestra load into PostgreSQL. I hold an INSEA engineering degree in Data and Software Engineering, completed an AI exchange programme at Université Laval, and work in French, English and Arabic.",
     ],
     spoken: [
       { name: "Arabic", level: "Native" },
@@ -94,7 +93,7 @@ export const en: Dictionary = {
   },
   projects: {
     heading: "Featured projects",
-    intro: "Public GitHub work. ChantiePro first for software architecture; data-analytics, Bruin and Kestra for data engineering.",
+    intro: "Three inspectable projects covering backend architecture, analytics engineering, and cloud ELT. Supporting coursework remains available on GitHub without competing for the first impression.",
     details: "Project details",
     github: "GitHub",
     demo: "Live demo",
@@ -186,7 +185,7 @@ export const en: Dictionary = {
       problem:
         "TLC publishes tens of millions of trip rows with inconsistent yellow/green column names. Analysts need typed, documented models and a grain they can join — not a pile of CSVs.",
       solution:
-        "Load Parquet into DuckDB, then a dbt project with a classic staging → intermediate → marts layout. Staging casts and renames; intermediate unions services, builds a surrogate trip_id, and deduplicates; marts form a star schema. The dev target samples January 2019 so local runs stay bounded. After ingest, prod.yellow_tripdata holds 109,047,518 rows and prod.green_tripdata 7,778,101; fct_trips on the sampled dev target has 8,095,489 rows.",
+        "Load Parquet into DuckDB, then build staging → intermediate → marts with dbt. The intermediate layer now derives trip_id from the complete stable trip grain; a weaker shortcut was found to collapse 202,906 valid rows. The corrected model retains all 8,298,395 January records, and a deterministic CI fixture prevents regression.",
       features: [
         "ingest_data.py: CSV.gz → Parquet → DuckDB prod schema",
         "Staging for yellow and green with shared naming",
@@ -237,17 +236,18 @@ export const en: Dictionary = {
         "Kestra scheduled ETL: monthly NYC TLC CSVs into PostgreSQL with staging COPY and MERGE.",
       role: "Supporting",
       description:
-        "A Kestra flow (postgres_taxi_scheduled, namespace zoomcamp) that wget’s a monthly TLC CSV, COPY’s it into a staging table, stamps a deterministic MD5 unique_row_id, and MERGE’s into yellow_tripdata or green_tripdata. Docker Compose runs Kestra, two Postgres instances, and pgAdmin. Zoomcamp orchestration module.",
+        "A Kestra flow (postgres_taxi_scheduled, namespace zoomcamp) that downloads a selected TLC month, COPYs it into a staging table, derives a deterministic MD5 row key, and MERGEs into yellow_tripdata or green_tripdata. Docker Compose runs Kestra, its metadata store, PostgreSQL and pgAdmin. Zoomcamp orchestration module.",
       problem:
         "Monthly taxi files must land in PostgreSQL without duplicating rows when a month is re-run, and yellow vs green schemas differ.",
       solution:
-        "Inputs select taxi type. Shell extract gunzips the GitHub release. Branching tasks create typed tables, COPY into staging, then MERGE on unique_row_id. Cron: green 09:00 on the 1st, yellow 10:00. Concurrency limit 1. Credentials in compose are local-dev defaults, not production secrets.",
+        "Inputs select taxi type and YYYY-MM period, making manual and scheduled runs deterministic. Branching tasks create typed tables, COPY into staging, then MERGE on unique_row_id. A January 2021 yellow run was re-verified successfully in Kestra 1.1.20 and loaded 7,774,773 rows into PostgreSQL.",
       features: [
         "Kestra standalone server with Postgres metadata store",
         "Staging COPY + MERGE skip-duplicates load",
         "Separate yellow and green DDL",
         "Monthly cron triggers and backfill label",
         "pgAdmin on port 8085 against ny_taxi",
+        "Verified January 2021 execution: SUCCESS, 7,774,773 yellow-trip rows",
       ],
     },
     "face-detection-react": {
@@ -269,6 +269,7 @@ export const en: Dictionary = {
   },
   skills: {
     heading: "Skills",
+    intro: "Technologies backed by professional use or inspectable public projects.",
     groups: [
       {
         name: "Backend",
@@ -281,7 +282,6 @@ export const en: Dictionary = {
           "Spring Cloud",
           "REST APIs",
           "Microservices",
-          "Mendix",
         ],
       },
       {
@@ -297,11 +297,10 @@ export const en: Dictionary = {
           "Flyway",
           "Redis",
           "Kafka",
-          "Keycloak / IAM",
         ],
       },
       {
-        name: "Platform",
+        name: "Platform & security",
         items: [
           "Docker",
           "Kubernetes",
@@ -312,7 +311,8 @@ export const en: Dictionary = {
           "CI/CD",
           "JUnit",
           "Mockito",
-          "Azure",
+          "Keycloak / IAM",
+          "Mendix",
         ],
       },
       {
@@ -320,22 +320,14 @@ export const en: Dictionary = {
         items: [
           "Python",
           "pandas",
-          "PostgreSQL",
-          "Docker Compose",
-          "Terraform",
-          "GCP",
-          "GCS",
-          "BigQuery",
           "dbt",
           "DuckDB",
-          "Kestra",
-          "dlt",
+          "MotherDuck",
           "Bruin",
-          "Spark",
-          "Kafka Streams",
-          "KSQL",
-          "Avro",
-          "Flink",
+          "PyArrow",
+          "Parquet",
+          "Kestra",
+          "Docker Compose",
         ],
       },
     ],
@@ -345,7 +337,7 @@ export const en: Dictionary = {
     certsHeading: "Certifications",
     items: [
       {
-        title: "M.Sc. in Computer Science — Artificial Intelligence",
+        title: "Graduate exchange programme — Artificial Intelligence",
         school: "Université Laval",
         location: "Québec, Canada",
         start: "Aug 2021",

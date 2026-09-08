@@ -53,7 +53,7 @@ const links = [
         class="inline-flex items-center border border-ink px-3 py-1.5 text-[0.85rem] font-medium text-ink no-underline transition-colors hover:bg-ink hover:text-paper"
         download
       >
-        {t.nav.cv}
+        {t.nav.cv} ({cv.fileLabel})
       </a>
       <LanguageSwitcher locale={locale} pathname={pathname} />
     </nav>
@@ -85,7 +85,7 @@ const links = [
               class="mt-2 border border-ink px-2 py-1.5 text-center text-sm font-medium text-ink no-underline"
               download
             >
-              {t.nav.cv}
+              {t.nav.cv} ({cv.fileLabel})
             </a>
           </nav>
         </div>

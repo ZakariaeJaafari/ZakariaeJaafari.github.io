@@ -1,8 +1,11 @@
 # zakariaejaafari.github.io
 
-Personal site for [Zakariae Jaafari](https://zakariaejaafari.github.io/en/) — Software Engineer · Data Engineering & AI, Rabat.
+Personal site for [Zakariae Jaafari](https://zakariaejaafari.github.io/en/) —
+Software Engineer focused on Java/Spring backend systems and data engineering.
 
-Built from the CV and the three public GitHub repositories. Nothing on the site is invented.
+The content is sourced from professional experience and inspectable public
+repositories; project metrics are published only when they have been queried or
+reproduced.
 
 **Live**
 
@@ -13,8 +16,9 @@ Built from the CV and the three public GitHub repositories. Nothing on the site 
 ## What it contains
 
 - Hero, about, experience, skills, featured projects, education, certifications, contact
-- Dedicated pages for ChantiePro, the NYC taxi pipeline, and the face-detection app
+- Dedicated pages for ChantiePro and four NYC taxi data-engineering implementations
 - English and French CV PDFs in `public/cv/`
+- The Arabic locale clearly links to the English CV; no Arabic PDF is presented
 - Semantic HTML, JSON-LD, Open Graph, hreflang, sitemap, `robots.txt`
 
 ## Local development
