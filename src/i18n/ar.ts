@@ -233,7 +233,7 @@ export const ar: Dictionary = {
   },
   skills: {
     heading: "المهارات",
-    intro: "تقنيات مدعومة بالخبرة المهنية أو بمشاريع عامة قابلة للفحص.",
+    intro: "تقنيات من العمل المهني والمشاريع العامة ودورة DataTalksClub Zoomcamp.",
     groups: [
       {
         name: "الخلفية التقنية",
@@ -291,6 +291,17 @@ export const ar: Dictionary = {
           "PyArrow",
           "Parquet",
           "Kestra",
+          "Airflow",
+          "Spark",
+          "Flink",
+          "dlt",
+          "Kafka Streams",
+          "KSQL",
+          "Avro",
+          "BigQuery",
+          "GCS",
+          "GCP",
+          "Terraform",
           "Docker Compose",
         ],
       },

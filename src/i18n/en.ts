@@ -253,7 +253,7 @@ export const en: Dictionary = {
   },
   skills: {
     heading: "Skills",
-    intro: "Technologies backed by professional use or inspectable public projects.",
+    intro: "Technologies from professional delivery, public pipelines, and DataTalksClub Zoomcamp coursework.",
     groups: [
       {
         name: "Backend",
@@ -311,6 +311,17 @@ export const en: Dictionary = {
           "PyArrow",
           "Parquet",
           "Kestra",
+          "Airflow",
+          "Spark",
+          "Flink",
+          "dlt",
+          "Kafka Streams",
+          "KSQL",
+          "Avro",
+          "BigQuery",
+          "GCS",
+          "GCP",
+          "Terraform",
           "Docker Compose",
         ],
       },
