@@ -251,22 +251,6 @@ export const fr: Dictionary = {
         "Exécution janvier 2021 vérifiée : SUCCESS, 7 774 773 lignes yellow",
       ],
     },
-    "face-detection-react": {
-      oneLiner:
-        "Application React qui détecte un visage dans une URL d'image et superpose un cadre.",
-      role: "Complémentaire",
-      description:
-        "Petite application React d'une page. On colle une URL, on appelle le modèle de détection de visage Clarifai, on convertit les coordonnées normalisées en offsets CSS, et on dessine un cadre. Projet front de début, conservé parce que la logique de mapping reste un exemple propre. Pas de backend, pas d'authentification, pas de base.",
-      problem:
-        "Clarifai renvoie un cadre en quatre flottants entre 0 et 1, relatifs aux dimensions de l'image. Le navigateur a besoin d'offsets CSS en pixels, relatifs à l'<img> rendu, qui peut être mis à l'échelle.",
-      solution:
-        "calculateFaceLocation lit la largeur et la hauteur de l'élément rendu et multiplie. right et bottom sont inversés parce que le calque est positionné en CSS right/bottom, qui se mesurent depuis le bord opposé. La clé Clarifai vient de REACT_APP_CLARIFAI_API_KEY. Create React App l'inline dans le bundle : ce n'est pas un secret côté serveur.",
-      features: [
-        "Saisie d'URL et action Detect contre le modèle Clarifai",
-        "Passage des coordonnées normalisées aux pixels de l'image rendue",
-        "États de chargement et d'erreur, y compris clé API manquante",
-      ],
-    },
   },
   skills: {
     heading: "Compétences",

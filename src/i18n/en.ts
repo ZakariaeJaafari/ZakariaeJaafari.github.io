@@ -250,22 +250,6 @@ export const en: Dictionary = {
         "Verified January 2021 execution: SUCCESS, 7,774,773 yellow-trip rows",
       ],
     },
-    "face-detection-react": {
-      oneLiner:
-        "React app that detects a face in an image URL and overlays a bounding box.",
-      role: "Supporting",
-      description:
-        "A small single-page React app. Paste an image URL, call the Clarifai face-detection model, convert the returned normalised coordinates into CSS pixel offsets, and draw a box on the rendered image. An early front-end project, kept because the mapping logic is still a clean example. There is no backend, no authentication and no database.",
-      problem:
-        "Clarifai returns a box as four floats between 0 and 1, relative to the image’s own dimensions. The browser needs CSS offsets in pixels, relative to the rendered <img>, which may be scaled.",
-      solution:
-        "calculateFaceLocation reads the rendered element’s width and height and multiplies. right and bottom are inverted because the overlay is positioned with CSS right/bottom, which measure inward from the opposite edge. The Clarifai key is read from REACT_APP_CLARIFAI_API_KEY. Create React App inlines that variable into the bundle, so the key is not treated as a server secret.",
-      features: [
-        "URL input and Detect action against Clarifai’s face-detection model",
-        "Normalised-to-pixel coordinate mapping against the rendered image",
-        "Loading and error states, including a missing API key",
-      ],
-    },
   },
   skills: {
     heading: "Skills",
