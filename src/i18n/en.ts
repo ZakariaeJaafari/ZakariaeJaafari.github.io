@@ -4,7 +4,7 @@ export const en: Dictionary = {
   meta: {
     title: "Zakariae Jaafari — Software Engineer · Data Engineering",
     description:
-      "Software engineer in Rabat focused on Java and Spring backend systems, with tested data-engineering projects in Python, dbt, DuckDB and Bruin.",
+      "Java / Spring software engineer in Rabat with 4+ years of production delivery and inspectable data-engineering projects.",
   },
   nav: {
     about: "About",
@@ -26,7 +26,7 @@ export const en: Dictionary = {
     title: "Software Engineer · Data Engineering",
     headline: "Java 21 · Spring Boot · Kafka · Python · dbt · DuckDB",
     summary:
-      "Software engineer with 4+ years building Java and Spring Boot services for public-sector and enterprise teams. Public projects extend that backend foundation into tested data pipelines with Python, dbt, DuckDB and Bruin.",
+      "Java / Spring software engineer with 4+ years of production delivery across public-sector and IT-services teams. At ADD I design Java 21 / Spring Boot microservices, Angular / React interfaces and Kafka / Redis flows, with Keycloak IAM, JUnit / Mockito tests and Docker / Kubernetes delivery.",
     viewProjects: "View projects",
     photoAlt:
       "Portrait of Zakariae Jaafari in a white shirt, against a light background.",
@@ -34,8 +34,8 @@ export const en: Dictionary = {
   about: {
     heading: "About",
     paragraphs: [
-      "I am a software engineer in Rabat with 4+ years across public-sector delivery and IT services. At the Agence de Développement du Digital (ADD), I build Java 21 and Spring Boot services, Angular and React interfaces, Kafka and Redis integrations, Keycloak IAM, and Docker/Kubernetes delivery. Previously, I developed Spring microservices and Angular applications at Inetum Morocco.",
-      "My public data-engineering work complements that backend experience: a tested dbt/DuckDB star schema over 109 million source rows, a Bruin pipeline running on DuckDB and MotherDuck, and a verified Kestra load into PostgreSQL. I hold an INSEA engineering degree in Data and Software Engineering, completed an AI exchange programme at Université Laval, and work in French, English and Arabic.",
+      "Java / Spring software engineer with 4+ years of production delivery across public-sector and IT-services teams. At Agence de Développement du Digital (ADD), I design Java 21 / Spring Boot microservices, Angular / React interfaces and Kafka / Redis flows, with Keycloak IAM, JUnit / Mockito tests and Docker / Kubernetes delivery. I turn stakeholder requirements into Scrum sprints and mentor junior developers.",
+      "Public projects extend that backend base into inspectable data engineering: dbt / DuckDB (109 million yellow trips), Bruin / MotherDuck ELT and Kestra orchestration. INSEA graduate in Data & Software Engineering; Arabic, French and English. Based in Rabat; open to French-speaking Europe.",
     ],
     spoken: [
       { name: "Arabic", level: "Native" },
@@ -54,27 +54,25 @@ export const en: Dictionary = {
         location: "Rabat, Morocco",
         start: "Sept 2024",
         end: "Present",
-        summary:
-          "Morocco's national digital development agency. Java 21 / Spring Boot services and Angular / React interfaces for public-sector digital services — Kafka, Redis, Keycloak, Docker and Kubernetes.",
         bullets: [
-          "Design and build Java 21 / Spring Boot services and Angular / React interfaces for public-sector digital services, using Kafka for cross-service events and Redis for caching.",
-          "Deploy and orchestrate services with Docker and Kubernetes; manage authentication and IAM with Keycloak.",
-          "Cover services with JUnit, Mockito and integration tests before release.",
-          "Gather requirements directly with client stakeholders and turn them into sprint-ready work.",
+          "Design Java 21 / Spring Boot services and Angular / React interfaces for public-sector digital services.",
+          "Cross-service events with Kafka, Redis caching; deploy and orchestrate with Docker / Kubernetes.",
+          "Keycloak IAM; JUnit, Mockito and integration tests before release.",
+          "Gather requirements with client stakeholders and turn them into sprint-ready work.",
           "Mentor junior developers and lead the team on sprint goals in Scrum.",
         ],
       },
       {
         id: "inetum",
         title: "Software Engineer",
-        company: "Inetum Morocco — French IT services group",
+        company: "Inetum Morocco",
         location: "Rabat, Morocco",
         start: "Aug 2022",
         end: "Aug 2024",
         bullets: [
-          "Built Spring Boot microservices and REST APIs for production applications, in Scrum.",
-          "Delivered Angular interfaces with cross-functional teams; wrote unit and integration tests (JUnit, Mockito).",
-          "Containerized services with Docker; CI on Jenkins and GitLab. Used Mendix when rapid delivery was the constraint.",
+          "Spring Boot microservices and REST APIs for production applications, in Scrum.",
+          "Angular interfaces with cross-functional teams; JUnit and Mockito tests.",
+          "Docker containers; CI on Jenkins and GitLab. Mendix when rapid delivery was the constraint.",
         ],
       },
       {
@@ -85,8 +83,8 @@ export const en: Dictionary = {
         start: "May 2022",
         end: "Aug 2022",
         bullets: [
-          "Segmented customers with clustering and built dashboards; estimated customer lifetime value and plotted survival curves.",
-          "Proposed analyses to support company decision-making (Python, scikit-learn, PyTorch, SQL, Azure).",
+          "Customer clustering and dashboards; lifetime value and survival curves.",
+          "Analyses proposed to support company decisions (Python, scikit-learn, PyTorch, SQL, Azure).",
         ],
       },
     ],
@@ -115,7 +113,7 @@ export const en: Dictionary = {
   projectPages: {
     chantiepro: {
       oneLiner:
-        "Event-driven construction management platform: sixteen Spring Boot services, Kafka, and an Angular 18 front end.",
+        "16 Spring Boot 3.3 services on Java 21, 6 shared libraries, 31 Flyway migrations, Kafka, Angular 18.",
       role: "Flagship",
       description:
         "A personal engineering project that models a construction firm as thirteen business services plus three platform services. Each service owns a private PostgreSQL schema. Changes that other parts of the system must react to travel as Kafka domain events. An Angular 18 workspace in Nx sits on top; Prometheus, Grafana, Loki and Zipkin sit underneath.",
@@ -178,7 +176,7 @@ export const en: Dictionary = {
     },
     "data-analytics": {
       oneLiner:
-        "Analytics engineering for NYC TLC trips: dbt and DuckDB turn raw Parquet into a tested star schema.",
+        "Dimensional models with dbt and DuckDB: 109,047,518 yellow trips at source, 8,298,395 sampled facts, and 34 tests executed in CI.",
       role: "Flagship",
       description:
         "An analytics-engineering warehouse for NYC yellow and green taxi trips. ingest_data.py lands monthly files as Parquet in DuckDB (prod schema). dbt then builds staging, intermediate, and marts — dimensions for zones and vendors, an incremental fct_trips, and monthly zone revenue. Seeds, macros, dbt_utils, and generated docs are in the repo. Coursework from DataTalksClub Zoomcamp module 04, run locally instead of BigQuery.",
@@ -206,7 +204,7 @@ export const en: Dictionary = {
     },
     "dataplatforme-bruin": {
       oneLiner:
-        "Bruin ELT on DuckDB and MotherDuck: batched PyArrow ingestion, staging quality checks, daily trip reports.",
+        "ELT on DuckDB and MotherDuck: batched PyArrow ingestion, deduplication, quality checks, 6,405,008 cloud rows, and SQL tests in CI.",
       role: "Supporting",
       description:
         "An end-to-end NYC taxi ELT pipeline on Bruin. Python assets fetch TLC parquet, yield 150k-row PyArrow batches, and land in DuckDB or MotherDuck. SQL assets filter, join a payment lookup, and deduplicate in staging, then aggregate a trips_report. Same pipeline code, two environments. Zoomcamp module 05 (data platforms).",
@@ -337,7 +335,6 @@ export const en: Dictionary = {
         location: "Québec, Canada",
         start: "Aug 2021",
         end: "May 2022",
-        note: "Exchange programme",
       },
       {
         title: "Engineering Degree in Data and Software Engineering",

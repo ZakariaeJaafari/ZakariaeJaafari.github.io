@@ -22,7 +22,7 @@ export const projects: Project[] = [
     slug: "chantiepro",
     name: "ChantiePro",
     oneLiner:
-      "Event-driven construction management platform: sixteen Spring Boot services, Kafka, and an Angular 18 front end.",
+      "16 Spring Boot 3.3 services on Java 21, 6 shared libraries, 31 Flyway migrations, Kafka, Angular 18.",
     role: "Flagship",
     featured: true,
     description:
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     slug: "data-analytics",
     name: "NYC Taxi dbt Analytics",
     oneLiner:
-      "Analytics engineering for NYC TLC trips: dbt and DuckDB turn raw Parquet into a tested star schema.",
+      "Dimensional models with dbt and DuckDB: 109,047,518 yellow trips at source, 8,298,395 sampled facts, and 34 tests executed in CI.",
     role: "Flagship",
     featured: true,
     description:
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     slug: "dataplatforme-bruin",
     name: "NYC Taxi ELT with Bruin",
     oneLiner:
-      "Bruin ELT on DuckDB and MotherDuck: batched PyArrow ingestion, staging quality checks, daily trip reports.",
+      "ELT on DuckDB and MotherDuck: batched PyArrow ingestion, deduplication, quality checks, 6,405,008 cloud rows, and SQL tests in CI.",
     role: "Supporting",
     featured: true,
     description:

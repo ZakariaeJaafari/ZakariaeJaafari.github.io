@@ -12,8 +12,8 @@ export const site = {
   url: "https://zakariaejaafari.github.io",
   cvHref: "/cv/Zakariae_Jaafari_CV_EN.pdf",
   cvLabel: "Download CV",
-  description:
-    "Software engineer in Rabat focused on Java and Spring backend systems, with tested data-engineering projects in Python, dbt, DuckDB and Bruin.",
+    description:
+    "Java / Spring software engineer in Rabat with 4+ years of production delivery and inspectable data-engineering projects.",
   languages: [
     { name: "Arabic", level: "Native" },
     { name: "French", level: "Fluent" },

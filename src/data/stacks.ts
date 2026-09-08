@@ -3,6 +3,7 @@ export const roleStacks: Record<string, string[]> = {
     "Java 21",
     "Spring Boot",
     "Spring Data JPA",
+    "Hibernate",
     "Angular",
     "React",
     "Kafka",

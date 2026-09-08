@@ -4,7 +4,7 @@ export const ar: Dictionary = {
   meta: {
     title: "Zakariae Jaafari — مهندس برمجيات · هندسة البيانات",
     description:
-      "مهندس برمجيات في الرباط متخصص في الأنظمة الخلفية بـ Java وSpring، مع مشاريع هندسة بيانات مختبَرة بـ Python وdbt وDuckDB وBruin.",
+      "مهندس برمجيات Java / Spring في الرباط، أكثر من أربع سنوات تسليم في الإنتاج ومشاريع هندسة بيانات قابلة للفحص.",
   },
   nav: {
     about: "نبذة",
@@ -26,15 +26,15 @@ export const ar: Dictionary = {
     title: "مهندس برمجيات · هندسة البيانات",
     headline: "Java 21 · Spring Boot · Kafka · Python · dbt · DuckDB",
     summary:
-      "مهندس برمجيات بأكثر من أربع سنوات في بناء خدمات Java وSpring Boot للقطاع العام والمؤسسات. توسّع مشاريعي العامة هذا الأساس الخلفي إلى أنابيب بيانات مختبَرة بـ Python وdbt وDuckDB وBruin.",
+      "مهندس برمجيات Java / Spring، أكثر من أربع سنوات تسليم في الإنتاج بين القطاع العام وشركات الخدمات. في ADD أصمّم خدمات Java 21 / Spring Boot المصغّرة، وواجهات Angular / React، وتدفقات Kafka / Redis، مع Keycloak وJUnit / Mockito وDocker / Kubernetes.",
     viewProjects: "عرض المشاريع",
     photoAlt: "صورة زكرياء جعفري بقميص أبيض على خلفية فاتحة.",
   },
   about: {
     heading: "نبذة",
     paragraphs: [
-      "أنا مهندس برمجيات في الرباط بأكثر من أربع سنوات بين الخدمات الرقمية العمومية وشركات الخدمات التقنية. في وكالة التنمية الرقمية (ADD) أبني خدمات Java 21 وSpring Boot، وواجهات Angular وReact، وتكاملات Kafka وRedis، وإدارة الهوية عبر Keycloak، والتسليم بـ Docker وKubernetes. قبل ذلك طورت خدمات Spring وتطبيقات Angular لدى Inetum المغرب.",
-      "تكمّل مشاريعي العامة في هندسة البيانات هذه الخبرة الخلفية: مخطط نجمي مختبَر بـ dbt وDuckDB على 109 ملايين صف مصدر، وأنبوب Bruin يعمل على DuckDB وMotherDuck، وتحميل Kestra متحقق منه إلى PostgreSQL. أنا مهندس دولة في Data and Software Engineering من INSEA، وأتممت برنامج تبادل في الذكاء الاصطناعي بجامعة لافال، وأعمل بالعربية والفرنسية والإنجليزية.",
+      "مهندس برمجيات Java / Spring، أكثر من أربع سنوات تسليم في الإنتاج بين القطاع العام وشركات الخدمات. في وكالة التنمية الرقمية (ADD) أصمّم خدمات Java 21 / Spring Boot المصغّرة، وواجهات Angular / React، وتدفقات Kafka / Redis، مع Keycloak واختبارات JUnit / Mockito ونشر Docker / Kubernetes. أحوّل حاجة الأعمال إلى سبرنتات Scrum وأؤطّر المطوّرين المبتدئين.",
+      "يمتد هذا الأساس الخلفي إلى مشاريع هندسة بيانات قابلة للفحص: dbt / DuckDB (109 ملايين رحلة صفراء)، وELT بـ Bruin / MotherDuck، وتنسيق Kestra. خرّيج Data & Software Engineering من INSEA، ثلاثي اللغة عربية / فرنسية / إنجليزية. الرباط؛ منفتح على أوروبا الناطقة بالفرنسية.",
     ],
     spoken: [
       { name: "العربية", level: "لغة أم" },
@@ -53,27 +53,25 @@ export const ar: Dictionary = {
         location: "الرباط، المغرب",
         start: "سبتمبر 2024",
         end: "حتى الآن",
-        summary:
-          "الوكالة الوطنية المغربية للتنمية الرقمية. خدمات Java 21 / Spring Boot وواجهات Angular / React لخدمات رقمية عمومية — Kafka وRedis وKeycloak وDocker وKubernetes.",
         bullets: [
-          "تصميم وبناء خدمات Java 21 / Spring Boot وواجهات Angular / React لخدمات رقمية عمومية، مع Kafka للأحداث بين الخدمات وRedis للتخزين المؤقت.",
-          "النشر والتنسيق عبر Docker وKubernetes؛ وإدارة المصادقة والهوية عبر Keycloak.",
-          "تغطية الخدمات باختبارات وحدية وتكاملية (JUnit وMockito) قبل الإصدار.",
-          "جمع المتطلبات مباشرة مع الأطراف المعنية لدى العميل وتحويلها إلى عمل سبرنت.",
+          "تصميم خدمات Java 21 / Spring Boot وواجهات Angular / React لخدمات رقمية عمومية.",
+          "أحداث بين الخدمات عبر Kafka، وتخزين Redis مؤقت؛ ونشر وتنسيق Docker / Kubernetes.",
+          "هوية Keycloak؛ واختبارات وحدية وتكاملية (JUnit وMockito) قبل الإنتاج.",
+          "جمع المتطلبات مع الأطراف المعنية لدى العميل وتحويلها إلى عمل سبرنت.",
           "تأطير المطوّرين المبتدئين وقيادة أهداف السبرنت في Scrum.",
         ],
       },
       {
         id: "inetum",
         title: "مهندس برمجيات",
-        company: "Inetum المغرب — مجموعة خدمات رقمية فرنسية",
+        company: "Inetum المغرب",
         location: "الرباط، المغرب",
         start: "أغسطس 2022",
         end: "أغسطس 2024",
         bullets: [
-          "بناء خدمات Spring Boot المصغّرة وواجهات REST لتطبيقات إنتاج، وفق Scrum.",
-          "واجهات Angular مع فرق متعدّدة الاختصاصات؛ واختبارات وحدية وتكاملية (JUnit وMockito).",
-          "تحوية الخدمات بـ Docker؛ وCI على Jenkins وGitLab. Mendix عندما كانت سرعة التسليم هي القيد.",
+          "خدمات Spring Boot المصغّرة وواجهات REST لتطبيقات إنتاج، وفق Scrum.",
+          "واجهات Angular مع فرق متعدّدة الاختصاصات؛ واختبارات JUnit وMockito.",
+          "تحوية Docker؛ وCI على Jenkins وGitLab. Mendix عندما كانت سرعة التسليم هي القيد.",
         ],
       },
       {
@@ -84,8 +82,8 @@ export const ar: Dictionary = {
         start: "مايو 2022",
         end: "أغسطس 2022",
         bullets: [
-          "تقسيم الزبائن بالتجميع ولوحات معلومات؛ وتقدير قيمة حياة الزبون ورسم منحنيات البقاء.",
-          "تحليلات مقترحة لدعم قرارات الشركة (Python وscikit-learn وPyTorch وSQL وAzure).",
+          "تقسيم الزبائن بالتجميع ولوحات معلومات؛ وقيمة حياة الزبون ومنحنيات البقاء.",
+          "تحليلات مقترحة لدعم القرارات (Python وscikit-learn وPyTorch وSQL وAzure).",
         ],
       },
     ],
@@ -115,7 +113,7 @@ export const ar: Dictionary = {
   projectPages: {
     chantiepro: {
       oneLiner:
-        "منصة إدارة أوراش قائمة على الأحداث: ستة عشر خدمة Spring Boot، وKafka، وواجهة Angular 18.",
+        "16 خدمة Spring Boot 3.3 على Java 21، و6 مكتبات مشتركة، و31 ترحيل Flyway، وKafka، وAngular 18.",
       role: "المشروع الرئيسي",
       description:
         "مشروع هندسي شخصي يصوغ شركة بناء في ثلاث عشرة خدمة أعمال وثلاث خدمات منصّة. لكل خدمة مخطط PostgreSQL خاص. التغييرات التي يجب أن يلاحظها باقي النظام تنتقل كأحداث Kafka. مساحة عمل Angular 18 في Nx في الأعلى؛ وPrometheus وGrafana وLoki وZipkin في الأسفل.",
@@ -178,7 +176,7 @@ export const ar: Dictionary = {
     },
     "data-analytics": {
       oneLiner:
-        "هندسة تحليلات لرحلات TLC في نيويورك: dbt وDuckDB يحوّلان Parquet إلى مخطط نجمي مختبَر.",
+        "نمذجة بُعدية بـ dbt وDuckDB: 109,047,518 رحلة صفراء في المصدر، و8,298,395 حقيقة عيّنة، و34 اختبارًا في CI.",
       role: "رئيسي",
       description:
         "مستودع analytics engineering للتاكسي الأصفر والأخضر. ingest_data.py يُنزل الملفات الشهرية إلى Parquet في DuckDB (مخطط prod). ثم يبني dbt طبقات staging وintermediate وmarts. عمل من Zoomcamp الوحدة 04، محليًا بدل BigQuery.",
@@ -196,7 +194,7 @@ export const ar: Dictionary = {
     },
     "dataplatforme-bruin": {
       oneLiner:
-        "ELT عبر Bruin على DuckDB وMotherDuck: إدخال PyArrow بالدفعات، فحوصات جودة، تقارير يومية.",
+        "ELT على DuckDB وMotherDuck: إدخال PyArrow بالدفعات، وإزالة التكرار، وفحوصات جودة، و6,405,008 صف سحابي واختبارات SQL في CI.",
       role: "مساند",
       description:
         "أنبوب ELT لتاكسي نيويورك على Bruin. أصول Python تجلب parquet وتُخرج دفعات 150 ألف صف إلى DuckDB أو MotherDuck. أصول SQL تنقّي وتزيل التكرار ثم تجمّع trips_report. نفس الرمز، بيئتان. Zoomcamp الوحدة 05.",
@@ -317,7 +315,6 @@ export const ar: Dictionary = {
         location: "كيبيك، كندا",
         start: "أغسطس 2021",
         end: "مايو 2022",
-        note: "برنامج تبادل",
       },
       {
         title: "دبلوم مهندس دولة — Data and Software Engineering",

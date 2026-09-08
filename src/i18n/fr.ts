@@ -4,7 +4,7 @@ export const fr: Dictionary = {
   meta: {
     title: "Zakariae Jaafari — Ingénieur logiciel · Data Engineering",
     description:
-      "Ingénieur logiciel à Rabat, spécialisé en backend Java/Spring, avec des projets data engineering testés en Python, dbt, DuckDB et Bruin.",
+      "Ingénieur logiciel Java / Spring à Rabat, plus de 4 ans de livraison en production et projets data engineering inspectables.",
   },
   nav: {
     about: "À propos",
@@ -26,7 +26,7 @@ export const fr: Dictionary = {
     title: "Ingénieur logiciel · Data Engineering",
     headline: "Java 21 · Spring Boot · Kafka · Python · dbt · DuckDB",
     summary:
-      "Ingénieur logiciel avec plus de 4 ans sur des services Java et Spring Boot pour le secteur public et des clients d'ESN. Mes projets publics étendent ce socle backend vers des pipelines data testés en Python, dbt, DuckDB et Bruin.",
+      "Ingénieur logiciel Java / Spring, plus de 4 ans de livraison en production entre secteur public et ESN. À l'ADD, je conçois des microservices Java 21 / Spring Boot, des interfaces Angular / React et des flux Kafka / Redis, avec IAM Keycloak, tests JUnit / Mockito et déploiement Docker / Kubernetes.",
     viewProjects: "Voir les projets",
     photoAlt:
       "Portrait de Zakariae Jaafari, chemise blanche, fond clair.",
@@ -34,8 +34,8 @@ export const fr: Dictionary = {
   about: {
     heading: "À propos",
     paragraphs: [
-      "Ingénieur logiciel à Rabat, j'ai plus de 4 ans d'expérience entre services numériques publics et ESN. À l'Agence de Développement du Digital (ADD), je développe des services Java 21 / Spring Boot, des interfaces Angular et React, des intégrations Kafka et Redis, l'IAM avec Keycloak et la livraison Docker/Kubernetes. Auparavant, je développais des microservices Spring et des applications Angular chez Inetum Maroc.",
-      "Mes projets publics de data engineering prolongent ce socle backend : schéma en étoile dbt/DuckDB testé sur 109 millions de lignes sources, pipeline Bruin sur DuckDB et MotherDuck, et chargement Kestra vérifié vers PostgreSQL. Je suis diplômé ingénieur Data & Software Engineering de l'INSEA, j'ai suivi un programme d'échange en IA à l'Université Laval et je travaille en français, anglais et arabe.",
+      "Ingénieur logiciel Java / Spring, plus de 4 ans de livraison en production entre secteur public et ESN. À l'Agence de Développement du Digital (ADD), je conçois des microservices Java 21 / Spring Boot, des interfaces Angular / React et des flux Kafka / Redis, avec IAM Keycloak, tests JUnit / Mockito et déploiement Docker / Kubernetes. Je recueille le besoin avec les métiers, le transforme en sprints Scrum et encadre des développeurs juniors.",
+      "Ce socle backend se prolonge par des projets data engineering inspectables : dbt / DuckDB (109 millions de courses yellow), ELT Bruin / MotherDuck et orchestration Kestra. Diplômé Data & Software Engineering (INSEA), trilingue arabe / français / anglais. Rabat ; ouvert à l'Europe francophone.",
     ],
     spoken: [
       { name: "Arabe", level: "Langue maternelle" },
@@ -54,26 +54,24 @@ export const fr: Dictionary = {
         location: "Rabat, Maroc",
         start: "Sept. 2024",
         end: "Aujourd'hui",
-        summary:
-          "L'agence nationale du développement du digital. Services Java 21 / Spring Boot et interfaces Angular / React pour des services numériques du secteur public — Kafka, Redis, Keycloak, Docker et Kubernetes.",
         bullets: [
-          "Conception et développement de services Java 21 / Spring Boot et d'interfaces Angular / React pour des services numériques du secteur public, Kafka pour les événements inter-services, Redis pour le cache.",
-          "Déploiement et orchestration avec Docker et Kubernetes ; authentification et IAM avec Keycloak.",
-          "Couverture des services par des tests unitaires et d'intégration (JUnit, Mockito) avant mise en production.",
-          "Recueil du besoin en direct avec les parties prenantes clientes, et traduction en travail de sprint.",
+          "Conception de services Java 21 / Spring Boot et d'interfaces Angular / React pour des services numériques du secteur public.",
+          "Événements inter-services avec Kafka, cache Redis ; déploiement et orchestration Docker / Kubernetes.",
+          "IAM Keycloak ; tests unitaires et d'intégration (JUnit, Mockito) avant mise en production.",
+          "Recueil du besoin avec les parties prenantes clientes et traduction en travail de sprint.",
           "Encadrement des développeurs juniors et pilotage des objectifs de sprint en Scrum.",
         ],
       },
       {
         id: "inetum",
         title: "Ingénieur logiciel",
-        company: "Inetum Maroc — ESN du groupe Inetum",
+        company: "Inetum Maroc",
         location: "Rabat, Maroc",
         start: "Août 2022",
         end: "Août 2024",
         bullets: [
-          "Développement de microservices Spring Boot et d'API REST pour des applications de production, en Scrum.",
-          "Interfaces Angular avec des équipes pluridisciplinaires ; tests unitaires et d'intégration (JUnit, Mockito).",
+          "Microservices Spring Boot et API REST pour des applications de production, en Scrum.",
+          "Interfaces Angular avec des équipes pluridisciplinaires ; tests JUnit et Mockito.",
           "Conteneurisation Docker ; CI Jenkins et GitLab. Mendix lorsque la contrainte était la vitesse de livraison.",
         ],
       },
@@ -85,8 +83,8 @@ export const fr: Dictionary = {
         start: "Mai 2022",
         end: "Août 2022",
         bullets: [
-          "Segmentation clients par clustering et tableaux de bord ; estimation de la valeur vie client et courbes de survie.",
-          "Analyses proposées pour éclairer les décisions de l'entreprise (Python, scikit-learn, PyTorch, SQL, Azure).",
+          "Segmentation clients par clustering et tableaux de bord ; valeur vie client et courbes de survie.",
+          "Analyses proposées pour éclairer les décisions (Python, scikit-learn, PyTorch, SQL, Azure).",
         ],
       },
     ],
@@ -116,7 +114,7 @@ export const fr: Dictionary = {
   projectPages: {
     chantiepro: {
       oneLiner:
-        "Plateforme de gestion de chantier événementielle : seize services Spring Boot, Kafka, et un front Angular 18.",
+        "16 services Spring Boot 3.3 en Java 21, 6 bibliothèques partagées, 31 migrations Flyway, Kafka, Angular 18.",
       role: "Projet phare",
       description:
         "Projet personnel d'ingénierie qui modélise une entreprise de construction en treize services métier et trois services de plateforme. Chaque service possède son schéma PostgreSQL. Les changements que le reste du système doit observer circulent en événements Kafka. Un workspace Angular 18 sous Nx au-dessus ; Prometheus, Grafana, Loki et Zipkin en dessous.",
@@ -179,7 +177,7 @@ export const fr: Dictionary = {
     },
     "data-analytics": {
       oneLiner:
-        "Analytics engineering sur les courses TLC new-yorkaises : dbt et DuckDB transforment le Parquet en schéma en étoile testé.",
+        "Modélisation dimensionnelle avec dbt et DuckDB : 109 047 518 courses yellow en source, 8 298 395 faits échantillonnés et 34 tests exécutés en CI.",
       role: "Projet phare",
       description:
         "Entrepôt d'analytics engineering pour les taxis yellow et green. ingest_data.py pose les fichiers mensuels en Parquet dans DuckDB (schéma prod). dbt enchaîne staging, intermediate et marts — dimensions zones et vendors, fct_trips incrémental, revenu mensuel par zone. Seeds, macros, dbt_utils et docs générées. Module 04 du Zoomcamp, exécuté en local plutôt que sur BigQuery.",
@@ -207,7 +205,7 @@ export const fr: Dictionary = {
     },
     "dataplatforme-bruin": {
       oneLiner:
-        "ELT Bruin sur DuckDB et MotherDuck : ingestion PyArrow par lots, contrôles en staging, rapports journaliers.",
+        "ELT sur DuckDB et MotherDuck : ingestion PyArrow par lots, déduplication, contrôles qualité, 6 405 008 lignes cloud et tests SQL en CI.",
       role: "Complémentaire",
       description:
         "Pipeline ELT NYC taxi sur Bruin. Les assets Python récupèrent le parquet TLC, cèdent des lots PyArrow de 150 000 lignes, et atterrissent dans DuckDB ou MotherDuck. Les assets SQL filtrent, joignent le lookup paiement, dédupliquent, puis agrègent trips_report. Même code, deux environnements. Module 05 du Zoomcamp.",
@@ -338,7 +336,6 @@ export const fr: Dictionary = {
         location: "Québec, Canada",
         start: "Août 2021",
         end: "Mai 2022",
-        note: "Programme d'échange",
       },
       {
         title: "Diplôme d'ingénieur — Data & Software Engineering",
