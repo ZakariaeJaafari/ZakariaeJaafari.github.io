@@ -1,7 +1,7 @@
 export const site = {
   name: "Zakariae Jaafari",
-  title: "Software Engineer · Data Engineering & AI",
-  headline: "Java · Spring Boot · Kafka · Python",
+  title: "Software Engineer · Data Engineer",
+    headline: "Java 21 · Spring Boot · Kafka · DuckDB · dbt · Python",
   location: "Rabat, Morocco",
   availability: "Open to roles worldwide",
   email: "zakariae.jaafari98@gmail.com",
@@ -13,7 +13,7 @@ export const site = {
   cvHref: "/cv/Zakariae_Jaafari_CV_EN.pdf",
   cvLabel: "Download CV",
   description:
-    "Software Engineer in Rabat. Java, Spring Boot, Kafka and Python — software systems first, with a direction toward data engineering and applied AI.",
+    "Software Engineer and Data Engineer in Rabat. Java, Spring Boot, Kafka, dbt, DuckDB and Python — production software systems, plus tested data pipelines.",
   languages: [
     { name: "Arabic", level: "Native" },
     { name: "French", level: "Fluent" },

@@ -35,6 +35,12 @@ export const education: EducationItem[] = [
 
 export const certifications: Certification[] = [
   {
+    title: "Intermediate Developer Certificate",
+    issuer: "Mendix",
+    location: "",
+    date: "Dec 2024",
+  },
+  {
     title: "Rapid Developer Certificate",
     issuer: "Mendix",
     location: "",

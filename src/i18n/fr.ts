@@ -2,9 +2,9 @@ import type { Dictionary } from "./types";
 
 export const fr: Dictionary = {
   meta: {
-    title: "Zakariae Jaafari — Ingénieur logiciel · Data Engineering & IA",
+    title: "Zakariae Jaafari — Ingénieur logiciel · Data Engineer",
     description:
-      "Ingénieur logiciel à Rabat. Java, Spring Boot, Kafka et Python — le logiciel d'abord, avec une orientation data engineering et IA appliquée. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone.",
+      "Ingénieur logiciel et Data Engineer à Rabat. Java, Spring Boot, Kafka, dbt, DuckDB et Python. Ouvert aux postes d'ingénieur logiciel et Data Engineer en Europe francophone.",
   },
   nav: {
     about: "À propos",
@@ -23,10 +23,10 @@ export const fr: Dictionary = {
   hero: {
     kickerLocation: "Rabat, Maroc",
     kickerAvailability: "Ouvert aux opportunités partout",
-    title: "Ingénieur logiciel · Data Engineering & IA",
-    headline: "Java · Spring Boot · Kafka · Python",
+    title: "Ingénieur logiciel · Data Engineer",
+    headline: "Java 21 · Spring Boot · Kafka · DuckDB · dbt · Python",
     summary:
-      "Ingénieur logiciel, plus de 4 ans sur Java 21 et Spring Boot côté secteur public et ESN : microservices événementiels, Angular et React, IAM Keycloak. Orientation data engineering et IA appliquée. Basé à Rabat. Intervient en français, anglais et arabe. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone.",
+      "Ingénieur logiciel, plus de 4 ans sur Java 21 et Spring Boot côté secteur public et ESN, plus des pipelines data testés (dbt, DuckDB, Bruin, Kestra). Basé à Rabat. Intervient en français, anglais et arabe. Ouvert aux postes d'ingénieur logiciel et Data Engineer en Europe francophone.",
     viewProjects: "Voir les projets",
     photoAlt:
       "Portrait de Zakariae Jaafari, chemise blanche, fond clair.",
@@ -34,9 +34,9 @@ export const fr: Dictionary = {
   about: {
     heading: "À propos",
     paragraphs: [
-      "Je suis ingénieur logiciel à Rabat. Depuis septembre 2024, je suis ingénieur freelance auprès de l'Agence de Développement du Digital (ADD), l'opérateur national marocain du numérique : services Java 21 et Spring Boot, interfaces Angular et React, Redis et Kafka entre les services, Docker et Kubernetes pour la livraison, Keycloak pour l'identité. Mendix fait partie des outils lorsque le besoin s'y prête — ce n'est pas le centre du travail.",
+      "Je suis ingénieur logiciel à Rabat, avec une spécialisation Data Engineer construite sur cette base. Depuis septembre 2024, je suis ingénieur freelance auprès de l'Agence de Développement du Digital (ADD), l'opérateur national marocain du numérique : services Java 21 et Spring Boot, interfaces Angular et React, Redis et Kafka entre les services, Docker et Kubernetes pour la livraison, Keycloak pour l'identité. Mendix fait partie des outils lorsque le besoin s'y prête — ce n'est pas le centre du travail.",
       "Avant cela, deux ans chez Inetum Maroc, antenne du groupe ESN français, comme ingénieur logiciel : microservices, API REST, Angular, Docker, tests JUnit/Mockito, et Mendix lorsque la contrainte était la vitesse de livraison. Formation d'ingénieur Data & Software Engineering à l'INSEA, année d'échange en intelligence artificielle à l'Université Laval, stage data science chez Beneva à Québec.",
-      "Je construis une orientation data engineering et IA appliquée sur cette base d'ingénierie logicielle. Le diplôme INSEA est en Data and Software Engineering ; l'échange à Laval portait sur l'intelligence artificielle ; le stage Beneva sur le clustering, la valeur vie client et les courbes de survie ; le pipeline des taxis new-yorkais sur ce site vient du Data Engineering Zoomcamp de DataTalksClub. Je vise d'abord des postes d'ingénieur logiciel, y compris dans des équipes data-platform ou proches de l'IA, là où Java, Kafka et Python se transfèrent.",
+      "Le volet data engineering de ce site est du travail de projet, pas un intitulé de poste à l'ADD ou chez Inetum : modèles dbt et DuckDB sur 109 millions de courses new-yorkaises, un ELT Bruin sur MotherDuck (6,4 millions de lignes ingérées), un flux Kestra vers PostgreSQL. Je vise des postes d'ingénieur logiciel et de Data Engineer, y compris dans des équipes data-platform où Java, Kafka et Python se transfèrent.",
     ],
     spoken: [
       { name: "Arabe", level: "Langue maternelle" },
@@ -95,7 +95,7 @@ export const fr: Dictionary = {
   projects: {
     heading: "Projets en avant",
     intro:
-      "Dépôts GitHub publics. ChantiePro est le projet à ouvrir en premier ; le pipeline taxis est le volet data engineering.",
+      "Dépôts GitHub publics. ChantiePro d'abord pour l'architecture logicielle ; data-analytics, Bruin et Kestra pour le data engineering.",
     details: "Fiche projet",
     github: "GitHub",
     demo: "Démo",
@@ -176,6 +176,79 @@ export const fr: Dictionary = {
           title: "Remplacer une fois, puis ajouter",
           body: "Relancer le job reconstruit la table au lieu de dupliquer les lignes. C'est le bon défaut pour un pipeline de cette taille.",
         },
+      ],
+    },
+    "data-analytics": {
+      oneLiner:
+        "Analytics engineering sur les courses TLC new-yorkaises : dbt et DuckDB transforment le Parquet en schéma en étoile testé.",
+      role: "Projet phare",
+      description:
+        "Entrepôt d'analytics engineering pour les taxis yellow et green. ingest_data.py pose les fichiers mensuels en Parquet dans DuckDB (schéma prod). dbt enchaîne staging, intermediate et marts — dimensions zones et vendors, fct_trips incrémental, revenu mensuel par zone. Seeds, macros, dbt_utils et docs générées. Module 04 du Zoomcamp, exécuté en local plutôt que sur BigQuery.",
+      problem:
+        "La TLC publie des dizaines de millions de lignes, avec des colonnes yellow/green incompatibles. Il faut des modèles typés, documentés, joignables — pas un tas de CSV.",
+      solution:
+        "Chargement Parquet dans DuckDB, puis projet dbt staging → intermediate → marts. Le staging caste et renomme ; l'intermédiaire unifie les services, calcule un trip_id et déduplique ; les marts forment un schéma en étoile. La cible dev échantillonne janvier 2019. Après ingest : 109 047 518 lignes yellow et 7 778 101 green en prod ; fct_trips compte 8 095 489 lignes sur le dev échantillonné.",
+      features: [
+        "ingest_data.py : CSV.gz → Parquet → schéma DuckDB prod",
+        "Staging yellow et green avec nommage commun",
+        "Schéma en étoile : dim_zones, dim_vendors, fct_trips incrémental, fct_monthly_zone_revenue",
+        "Seeds zones et types de paiement ; macros safe_cast et durée de course",
+        "Packages dbt_utils et codegen ; docs dbt générées et servies en local",
+      ],
+      decisions: [
+        {
+          title: "DuckDB plutôt que BigQuery en local",
+          body: "Le module Zoomcamp vise BigQuery. Ici les mêmes idées de modélisation tiennent dans un fichier DuckDB, sans facture cloud.",
+        },
+        {
+          title: "Faits incrémentaux",
+          body: "fct_trips fusionne sur trip_id pour ajouter des mois sans reconstruire 8 millions de lignes.",
+        },
+      ],
+    },
+    "dataplatforme-bruin": {
+      oneLiner:
+        "ELT Bruin sur DuckDB et MotherDuck : ingestion PyArrow par lots, contrôles en staging, rapports journaliers.",
+      role: "Complémentaire",
+      description:
+        "Pipeline ELT NYC taxi sur Bruin. Les assets Python récupèrent le parquet TLC, cèdent des lots PyArrow de 150 000 lignes, et atterrissent dans DuckDB ou MotherDuck. Les assets SQL filtrent, joignent le lookup paiement, dédupliquent, puis agrègent trips_report. Même code, deux environnements. Module 05 du Zoomcamp.",
+      problem:
+        "Un unique payload Arrow dépasse la limite IPC ~256 Mo de Bruin sur les gros mois (janvier 2020 yellow : 6,4 M de lignes). Retrélécharger le parquet à chaque run est du gaspillage. Les tarifs invalides et les clés composites dupliquées ne doivent pas arriver au rapport.",
+      solution:
+        "trips.py est un générateur : cache parquet local, colonnes réduites, lots, append à l'ingestion. Le staging est incrémental (time_interval), écarte les lignes invalides, ROW_NUMBER() sur une clé composite. Production : base MotherDuck nyc_taxi. Requête du 8 sept. 2026 : 6 405 008 lignes ingérées, 6 370 784 en staging, 312 agrégats. bruin validate en local : 4 assets, aucun problème.",
+      features: [
+        "Quatre assets : ingestion.trips, ingestion.payment_lookup, staging.trips, reports.trips_report",
+        "Lots PyArrow de 150 000 lignes sous la limite IPC Bruin",
+        "Contrôles de colonnes et d'unicité en staging",
+        "DuckDB local et MotherDuck avec le même SQL d'assets",
+      ],
+      decisions: [
+        {
+          title: "Append brut, dédup en staging",
+          body: "La zone d'atterrissage reste simple. Dédup et qualité là où on peut les tester.",
+        },
+        {
+          title: "Un pipeline, deux backends",
+          body: "La connexion duckdb-default pointe un fichier local en default et MotherDuck en production.",
+        },
+      ],
+    },
+    "workflow-orchestration": {
+      oneLiner:
+        "ETL Kestra planifié : CSV TLC mensuels vers PostgreSQL, COPY en staging puis MERGE.",
+      role: "Complémentaire",
+      description:
+        "Flux Kestra (postgres_taxi_scheduled, namespace zoomcamp) : wget du CSV mensuel, COPY en staging, identifiant MD5 déterministe, MERGE vers yellow_tripdata ou green_tripdata. Docker Compose : Kestra, deux Postgres, pgAdmin. Module orchestration du Zoomcamp.",
+      problem:
+        "Les fichiers mensuels doivent arriver dans PostgreSQL sans dupliquer un mois relancé, et les schémas yellow / green diffèrent.",
+      solution:
+        "L'entrée choisit le type de taxi. L'extract gunzip le release GitHub. Des tâches branchées créent les tables typées, COPY en staging, MERGE sur unique_row_id. Cron : green 09:00 le 1er, yellow 10:00. Concurrence limitée à 1. Identifiants Compose : défauts de dev local, pas de secrets de production.",
+      features: [
+        "Serveur Kestra standalone, métadonnées Postgres",
+        "COPY staging + MERGE sans doublons",
+        "DDL yellow et green séparés",
+        "Déclencheurs cron mensuels et label backfill",
+        "pgAdmin sur le port 8085, base ny_taxi",
       ],
     },
     "face-detection-react": {
@@ -290,6 +363,11 @@ export const fr: Dictionary = {
     ],
     certs: [
       {
+        title: "Intermediate Developer Certificate",
+        issuer: "Mendix",
+        date: "Déc. 2024",
+      },
+      {
         title: "Rapid Developer Certificate",
         issuer: "Mendix",
         date: "Janv. 2024",
@@ -307,7 +385,7 @@ export const fr: Dictionary = {
   contact: {
     heading: "Contact",
     intro:
-      "Basé à Rabat. Ouvert aux postes d'ingénieur logiciel et Full-Stack en Europe francophone, et aux équipes data-platform ou proches de l'IA lorsque Java, Kafka et Python se transfèrent.",
+      "Basé à Rabat. Ouvert aux postes d'ingénieur logiciel et Data Engineer en Europe francophone, y compris dans des équipes data-platform où Java, Kafka et Python se transfèrent.",
     email: "E-mail",
     phone: "Téléphone",
     linkedin: "LinkedIn",

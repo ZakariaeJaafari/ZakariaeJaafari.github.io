@@ -78,6 +78,105 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "data-analytics",
+    name: "data-analytics",
+    oneLiner:
+      "Analytics engineering for NYC TLC trips: dbt and DuckDB turn raw Parquet into a tested star schema.",
+    role: "Flagship",
+    description:
+      "An analytics-engineering warehouse for NYC yellow and green taxi trips. ingest_data.py lands monthly files as Parquet in DuckDB (prod schema). dbt then builds staging, intermediate, and marts — dimensions for zones and vendors, an incremental fct_trips, and monthly zone revenue. Seeds, macros, dbt_utils, and generated docs are in the repo. Coursework from DataTalksClub Zoomcamp module 04, run locally instead of BigQuery.",
+    problem:
+      "TLC publishes tens of millions of trip rows with inconsistent yellow/green column names. Analysts need typed, documented models and a grain they can join — not a pile of CSVs.",
+    solution:
+      "Load Parquet into DuckDB, then a dbt project with a classic staging → intermediate → marts layout. Staging casts and renames; intermediate unions services, builds a surrogate trip_id, and deduplicates; marts form a star schema. The dev target samples January 2019 so local runs stay bounded. After ingest, prod.yellow_tripdata holds 109,047,518 rows and prod.green_tripdata 7,778,101; fct_trips on the sampled dev target has 8,095,489 rows.",
+    features: [
+      "ingest_data.py: CSV.gz → Parquet → DuckDB prod schema",
+      "Staging for yellow and green with shared naming",
+      "Star schema: dim_zones, dim_vendors, incremental fct_trips, fct_monthly_zone_revenue",
+      "Seeds for taxi zones and payment types; macros including safe_cast and trip duration",
+      "dbt packages: dbt_utils, codegen; dbt docs generated and served locally",
+    ],
+    decisions: [
+      {
+        title: "DuckDB instead of BigQuery for the local warehouse",
+        body: "The Zoomcamp module targets BigQuery. This repo keeps the same modeling ideas on a laptop-sized DuckDB file so the work is reproducible without a cloud bill.",
+      },
+      {
+        title: "Incremental facts",
+        body: "fct_trips merges on trip_id so later months can append without rebuilding 8M+ rows from scratch.",
+      },
+    ],
+    stack: ["dbt", "DuckDB", "SQL", "Python", "Parquet", "Docker Compose"],
+    github: "https://github.com/ZakariaeJaafari/data-analytics",
+    screenshots: [
+      {
+        src: "/projects/data-analytics/dbt-docs-overview.png",
+        alt: "dbt docs for the taxi_rides_ny project, showing sources, models, seeds and packages",
+      },
+      {
+        src: "/projects/data-analytics/dbt-fct-trips.png",
+        alt: "dbt docs for the incremental fct_trips mart",
+      },
+      {
+        src: "/projects/data-analytics/duckdb-prod-schema.png",
+        alt: "DuckDB explorer showing prod.yellow_tripdata and prod.green_tripdata",
+      },
+    ],
+  },
+  {
+    slug: "dataplatforme-bruin",
+    name: "DataPlatforme-Bruin",
+    oneLiner:
+      "Bruin ELT on DuckDB and MotherDuck: batched PyArrow ingestion, staging quality checks, daily trip reports.",
+    role: "Supporting",
+    description:
+      "An end-to-end NYC taxi ELT pipeline on Bruin. Python assets fetch TLC parquet, yield 150k-row PyArrow batches, and land in DuckDB or MotherDuck. SQL assets filter, join a payment lookup, and deduplicate in staging, then aggregate a trips_report. Same pipeline code, two environments. Zoomcamp module 05 (data platforms).",
+    problem:
+      "A single Arrow IPC payload hits Bruin’s ~256 MB limit on large months (January 2020 yellow is 6.4M rows). Re-downloading parquet on every run wastes time. Invalid fares and duplicate composite keys should not reach the report.",
+    solution:
+      "trips.py is a generator: cache parquet locally, prune columns, yield batches, append at ingestion. Staging uses a time_interval incremental strategy, drops invalid rows, and ROW_NUMBER() on a composite key. Production is MotherDuck database nyc_taxi. Re-queried 8 Sep 2026: 6,405,008 ingested rows, 6,370,784 staged, 312 report rows. bruin validate on the local environment reported four assets, no issues.",
+    features: [
+      "Four assets: ingestion.trips, ingestion.payment_lookup, staging.trips, reports.trips_report",
+      "Chunked PyArrow batches (150k rows) under Bruin’s Arrow IPC limit",
+      "Column checks and uniqueness on staging",
+      "Local DuckDB and MotherDuck production with the same asset SQL",
+    ],
+    decisions: [
+      {
+        title: "Append raw, dedupe in staging",
+        body: "The landing zone stays simple. Dedup and quality live where they can be tested.",
+      },
+      {
+        title: "One pipeline, two backends",
+        body: "Connection name duckdb-default points at a local file in default and at MotherDuck in production.",
+      },
+    ],
+    stack: ["Bruin", "DuckDB", "MotherDuck", "Python", "PyArrow", "SQL"],
+    github: "https://github.com/ZakariaeJaafari/DataPlatforme-Bruin",
+  },
+  {
+    slug: "workflow-orchestration",
+    name: "Workflow-Orchestration",
+    oneLiner:
+      "Kestra scheduled ETL: monthly NYC TLC CSVs into PostgreSQL with staging COPY and MERGE.",
+    role: "Supporting",
+    description:
+      "A Kestra flow (postgres_taxi_scheduled, namespace zoomcamp) that wget’s a monthly TLC CSV, COPY’s it into a staging table, stamps a deterministic MD5 unique_row_id, and MERGE’s into yellow_tripdata or green_tripdata. Docker Compose runs Kestra, two Postgres instances, and pgAdmin. Zoomcamp orchestration module.",
+    problem:
+      "Monthly taxi files must land in PostgreSQL without duplicating rows when a month is re-run, and yellow vs green schemas differ.",
+    solution:
+      "Inputs select taxi type. Shell extract gunzips the GitHub release. Branching tasks create typed tables, COPY into staging, then MERGE on unique_row_id. Cron: green 09:00 on the 1st, yellow 10:00. Concurrency limit 1. Credentials in compose are local-dev defaults, not production secrets.",
+    features: [
+      "Kestra standalone server with Postgres metadata store",
+      "Staging COPY + MERGE skip-duplicates load",
+      "Separate yellow and green DDL",
+      "Monthly cron triggers and backfill label",
+      "pgAdmin on port 8085 against ny_taxi",
+    ],
+    stack: ["Kestra", "PostgreSQL", "Docker Compose", "SQL"],
+    github: "https://github.com/ZakariaeJaafari/Workflow-Orchestration",
+  },
+  {
     slug: "nyc-taxi-ingestion-pipeline",
     name: "NYC Taxi Ingestion Pipeline",
     oneLiner:
@@ -115,26 +214,5 @@ export const projects: Project[] = [
       "uv",
     ],
     github: "https://github.com/ZakariaeJaafari/nyc-taxi-ingestion-pipeline",
-  },
-  {
-    slug: "face-detection-react",
-    name: "Face Detection",
-    oneLiner:
-      "React app that detects a face in an image URL and overlays a bounding box.",
-    role: "Supporting",
-    year: "2021",
-    description:
-      "A small single-page React app. Paste an image URL, call the Clarifai face-detection model, convert the returned normalised coordinates into CSS pixel offsets, and draw a box on the rendered image. An early front-end project, kept because the mapping logic is still a clean example. There is no backend, no authentication and no database.",
-    problem:
-      "Clarifai returns a box as four floats between 0 and 1, relative to the image’s own dimensions. The browser needs CSS offsets in pixels, relative to the rendered <img>, which may be scaled.",
-    solution:
-      "calculateFaceLocation reads the rendered element’s width and height and multiplies. right and bottom are inverted because the overlay is positioned with CSS right/bottom, which measure inward from the opposite edge. The Clarifai key is read from REACT_APP_CLARIFAI_API_KEY. Create React App inlines that variable into the bundle, so the key is not treated as a server secret.",
-    features: [
-      "URL input and Detect action against Clarifai’s face-detection model",
-      "Normalised-to-pixel coordinate mapping against the rendered image",
-      "Loading and error states, including a missing API key",
-    ],
-    stack: ["React", "JavaScript", "Clarifai API", "Webpack"],
-    github: "https://github.com/ZakariaeJaafari/face-detection-react",
   },
 ];

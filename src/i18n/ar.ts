@@ -2,9 +2,9 @@ import type { Dictionary } from "./types";
 
 export const ar: Dictionary = {
   meta: {
-    title: "Zakariae Jaafari — مهندس برمجيات · هندسة البيانات والذكاء الاصطناعي",
+    title: "Zakariae Jaafari — مهندس برمجيات · مهندس بيانات",
     description:
-      "مهندس برمجيات في الرباط. Java وSpring Boot وKafka وPython — هندسة البرمجيات أولًا، مع توجه نحو هندسة البيانات والذكاء الاصطناعي التطبيقي.",
+      "مهندس برمجيات ومهندس بيانات في الرباط. Java وSpring Boot وKafka وdbt وDuckDB وPython.",
   },
   nav: {
     about: "نبذة",
@@ -23,19 +23,19 @@ export const ar: Dictionary = {
   hero: {
     kickerLocation: "الرباط، المغرب",
     kickerAvailability: "منفتح على الفرص في أي مكان",
-    title: "مهندس برمجيات · هندسة البيانات والذكاء الاصطناعي",
-    headline: "Java · Spring Boot · Kafka · Python",
+    title: "مهندس برمجيات · مهندس بيانات",
+    headline: "Java 21 · Spring Boot · Kafka · DuckDB · dbt · Python",
     summary:
-      "مهندس برمجيات بأكثر من أربع سنوات على Java 21 وSpring Boot للقطاع العام والمؤسسات: خدمات مصغّرة قائمة على الأحداث، وAngular وReact، وKeycloak. يتجه نحو هندسة البيانات والذكاء الاصطناعي التطبيقي. مقيم في الرباط. يعمل بالفرنسية والإنجليزية والعربية. منفتح على أدوار مهندس برمجيات وFull-Stack في أوروبا الناطقة بالفرنسية.",
+      "مهندس برمجيات بأكثر من أربع سنوات على Java 21 وSpring Boot للقطاع العام والمؤسسات، مع أنابيب بيانات مختبَرة (dbt وDuckDB وBruin وKestra). مقيم في الرباط. يعمل بالفرنسية والإنجليزية والعربية. منفتح على أدوار مهندس برمجيات ومهندس بيانات في أوروبا الناطقة بالفرنسية.",
     viewProjects: "عرض المشاريع",
     photoAlt: "صورة زكرياء جعفري بقميص أبيض على خلفية فاتحة.",
   },
   about: {
     heading: "نبذة",
     paragraphs: [
-      "أنا مهندس برمجيات في الرباط. منذ سبتمبر 2024 أعمل مهندسًا مستقلًا لدى وكالة التنمية الرقمية (ADD)، الوكالة الوطنية المغربية للتنمية الرقمية: خدمات Java 21 وSpring Boot، واجهات Angular وReact، Redis وKafka بين الخدمات، Docker وKubernetes للتسليم، وKeycloak للهوية. Mendix أداة أستخدمها عندما يقتضي الطلب ذلك — وليست محور العمل.",
+      "أنا مهندس برمجيات في الرباط، مع تخصّص مهندس بيانات مبني على هذه القاعدة. منذ سبتمبر 2024 أعمل مهندسًا مستقلًا لدى وكالة التنمية الرقمية (ADD)، الوكالة الوطنية المغربية للتنمية الرقمية: خدمات Java 21 وSpring Boot، واجهات Angular وReact، Redis وKafka بين الخدمات، Docker وKubernetes للتسليم، وKeycloak للهوية. Mendix أداة أستخدمها عندما يقتضي الطلب ذلك — وليست محور العمل.",
       "قبل ذلك قضيت سنتين في Inetum المغرب، فرع مجموعة الخدمات الرقمية الفرنسية، مهندس برمجيات: خدمات مصغّرة، واجهات REST، Angular، Docker، اختبارات JUnit/Mockito، وMendix عندما كانت سرعة التسليم هي القيد. تكويني مهندس دولة في Data and Software Engineering من المعهد الوطني للإحصاء والاقتصاد التطبيقي، وسنة تبادل في الذكاء الاصطناعي بجامعة لافال، وتدريب تخرج في علم البيانات لدى Beneva في كيبيك.",
-      "أبني توجهًا نحو هندسة البيانات والذكاء الاصطناعي التطبيقي على هذه القاعدة في هندسة البرمجيات. شهادة المعهد في Data and Software Engineering؛ وسنة لافال في الذكاء الاصطناعي؛ وتدريب Beneva في التجميع وقيمة حياة الزبون ومنحنيات البقاء؛ وأنبوب سيارات الأجرة في نيويورك على هذا الموقع ناتج عن Data Engineering Zoomcamp من DataTalksClub. أبحث أولًا عن أدوار مهندس برمجيات، بما فيها فرق منصات البيانات أو القريبة من الذكاء الاصطناعي حيث تنتقل Java وKafka وPython.",
+      "عمل هندسة البيانات على هذا الموقع مشاريع، وليس مسمّى وظيفيًا في ADD أو Inetum: نماذج dbt وDuckDB على 109 ملايين رحلة تاكسي في نيويورك، وأنبوب ELT بـ Bruin على MotherDuck (6.4 ملايين صف)، وتدفق Kestra إلى PostgreSQL. أبحث عن أدوار مهندس برمجيات ومهندس بيانات، بما فيها فرق منصات البيانات حيث تنتقل Java وKafka وPython.",
     ],
     spoken: [
       { name: "العربية", level: "لغة أم" },
@@ -94,7 +94,7 @@ export const ar: Dictionary = {
   projects: {
     heading: "مشاريع مختارة",
     intro:
-      "أعمال عامة على GitHub. ChantiePro هو المشروع الذي يُفتح أولًا؛ وأنبوب سيارات الأجرة هو جزء هندسة البيانات.",
+      "أعمال عامة على GitHub. ChantiePro أولًا لهندسة البرمجيات؛ data-analytics وBruin وKestra لهندسة البيانات.",
     details: "تفاصيل المشروع",
     github: "GitHub",
     demo: "تجربة حيّة",
@@ -175,6 +175,59 @@ export const ar: Dictionary = {
           title: "استبدال مرة ثم إضافة",
           body: "إعادة التشغيل تعيد بناء الجدول بدل تكرار الصفوف. هذا هو الافتراض الصحيح لأنبوب بهذا الحجم.",
         },
+      ],
+    },
+    "data-analytics": {
+      oneLiner:
+        "هندسة تحليلات لرحلات TLC في نيويورك: dbt وDuckDB يحوّلان Parquet إلى مخطط نجمي مختبَر.",
+      role: "رئيسي",
+      description:
+        "مستودع analytics engineering للتاكسي الأصفر والأخضر. ingest_data.py يُنزل الملفات الشهرية إلى Parquet في DuckDB (مخطط prod). ثم يبني dbt طبقات staging وintermediate وmarts. عمل من Zoomcamp الوحدة 04، محليًا بدل BigQuery.",
+      problem:
+        "تنشر TLC عشرات الملايين من الصفوف بأسماء أعمدة مختلفة بين الأصفر والأخضر. يحتاج المحلل نماذج مكتوبة وموثّقة قابلة للربط.",
+      solution:
+        "تحميل Parquet إلى DuckDB ثم مشروع dbt: staging → intermediate → marts. الهدف dev يعيّن يناير 2019 فقط. بعد التحميل: 109,047,518 صفًا أصفر و7,778,101 أخضر في prod؛ وfct_trips يحوي 8,095,489 صفًا على عيّنة dev.",
+      features: [
+        "ingest_data.py: CSV.gz → Parquet → مخطط DuckDB prod",
+        "Staging للأصفر والأخضر بتسمية موحّدة",
+        "مخطط نجمي: dim_zones وdim_vendors وfct_trips تزايدي وfct_monthly_zone_revenue",
+        "بذور المناطق وأنواع الدفع؛ دوال ماكرو",
+        "حزم dbt_utils وcodegen؛ وثائق dbt محلية",
+      ],
+    },
+    "dataplatforme-bruin": {
+      oneLiner:
+        "ELT عبر Bruin على DuckDB وMotherDuck: إدخال PyArrow بالدفعات، فحوصات جودة، تقارير يومية.",
+      role: "مساند",
+      description:
+        "أنبوب ELT لتاكسي نيويورك على Bruin. أصول Python تجلب parquet وتُخرج دفعات 150 ألف صف إلى DuckDB أو MotherDuck. أصول SQL تنقّي وتزيل التكرار ثم تجمّع trips_report. نفس الرمز، بيئتان. Zoomcamp الوحدة 05.",
+      problem:
+        "حمولة Arrow واحدة تتجاوز حد Bruin (~256 ميغابايت) في الأشهر الكبيرة (يناير 2020: 6.4 ملايين صف).",
+      solution:
+        "trips.py مولّد: تخزين parquet محليًا، دفعات، إلحاق عند الإدخال. Staging تزايدي مع ROW_NUMBER. الإنتاج: قاعدة MotherDuck nyc_taxi. استعلام 8 سبتمبر 2026: 6,405,008 صفًا مدخلًا، 6,370,784 في staging، 312 صف تقرير. bruin validate محليًا: 4 أصول بلا مشاكل.",
+      features: [
+        "أربعة أصول: إدخال، lookup دفع، staging، تقرير",
+        "دفعات PyArrow من 150 ألف صف",
+        "فحوصات أعمدة وتميّز في staging",
+        "DuckDB محلي وMotherDuck بنفس SQL",
+      ],
+    },
+    "workflow-orchestration": {
+      oneLiner:
+        "ETL مجدول بـ Kestra: ملفات TLC الشهرية إلى PostgreSQL عبر COPY ثم MERGE.",
+      role: "مساند",
+      description:
+        "تدفق Kestra (postgres_taxi_scheduled) ينزّل CSV شهريًا، ينسخه إلى جدول مرحلي، يضع معرّف MD5، ثم يدمجه في yellow_tripdata أو green_tripdata. Docker Compose يشغّل Kestra وPostgres وpgAdmin.",
+      problem:
+        "يجب إدخال الملفات الشهرية دون تكرار عند إعادة التشغيل، ومخطط الأصفر يختلف عن الأخضر.",
+      solution:
+        "المدخل يختار نوع التاكسي. الاستخراج يفك الضغط. مهام متفرّعة تنشئ الجداول ثم COPY ثم MERGE على unique_row_id. Cron: أخضر 09:00 في الأول، أصفر 10:00. حد التزامن 1.",
+      features: [
+        "خادم Kestra مع مخزن بيانات وصفية Postgres",
+        "COPY مرحلي وMERGE دون تكرار",
+        "DDL منفصل للأصفر والأخضر",
+        "مجدول شهري ووسم backfill",
+        "pgAdmin على المنفذ 8085، قاعدة ny_taxi",
       ],
     },
     "face-detection-react": {
@@ -289,6 +342,11 @@ export const ar: Dictionary = {
     ],
     certs: [
       {
+        title: "Intermediate Developer Certificate",
+        issuer: "Mendix",
+        date: "ديسمبر 2024",
+      },
+      {
         title: "Rapid Developer Certificate",
         issuer: "Mendix",
         date: "يناير 2024",
@@ -306,7 +364,7 @@ export const ar: Dictionary = {
   contact: {
     heading: "التواصل",
     intro:
-      "مقيم في الرباط. منفتح على أدوار مهندس برمجيات وFull-Stack في أوروبا الناطقة بالفرنسية، وعلى هندسة منصات البيانات أو القريبة من الذكاء الاصطناعي حيث تنتقل Java وKafka وPython.",
+      "مقيم في الرباط. منفتح على أدوار مهندس برمجيات ومهندس بيانات في أوروبا الناطقة بالفرنسية، بما فيها فرق منصات البيانات حيث تنتقل Java وKafka وPython.",
     email: "البريد",
     phone: "الهاتف",
     linkedin: "LinkedIn",
