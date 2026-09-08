@@ -362,11 +362,6 @@ export const en: Dictionary = {
     ],
     certs: [
       {
-        title: "Intermediate Developer Certificate",
-        issuer: "Mendix",
-        date: "Dec 2024",
-      },
-      {
         title: "Rapid Developer Certificate",
         issuer: "Mendix",
         date: "Jan 2024",

@@ -110,16 +110,16 @@ export const projects: Project[] = [
     github: "https://github.com/ZakariaeJaafari/data-analytics",
     screenshots: [
       {
-        src: "/projects/data-analytics/dbt-docs-overview.png",
-        alt: "dbt docs for the taxi_rides_ny project, showing sources, models, seeds and packages",
-      },
-      {
         src: "/projects/data-analytics/dbt-fct-trips.png",
-        alt: "dbt docs for the incremental fct_trips mart",
+        alt: "dbt docs for the incremental fct_trips mart in taxi_rides_ny (staging → marts star schema)",
       },
       {
         src: "/projects/data-analytics/duckdb-prod-schema.png",
         alt: "DuckDB explorer showing prod.yellow_tripdata and prod.green_tripdata",
+      },
+      {
+        src: "/projects/data-analytics/dbt-docs-overview.png",
+        alt: "dbt docs project tree for taxi_rides_ny, with sources, models, seeds and packages",
       },
     ],
   },
